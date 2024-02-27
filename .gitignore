@@ -1,0 +1,37 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output directory
+dist/
+
+# Ignore development environment files
+.env
+
+# Ignore editor and IDE files
+.vscode/
+.idea/
+
+# Ignore log files
+*.log
+
+# Ignore dependency lock files
+package-lock.json
+yarn.lock
+
+# Ignore compiled and bundled files
+# *.js
+# *.js.map
+# *.css
+# *.css.map
+
+# Ignore image thumbnails
+*.thumb
+
+# Ignore temporary files
+*.tmp
+*.temp
+*.swp
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
