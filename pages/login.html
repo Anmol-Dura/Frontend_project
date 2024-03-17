@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="./js/script.js" defer></script>
+    <script src="https://kit.fontawesome.com/c5017c04fb.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../media/images/MicrosoftTeams-image.png" type="image/x-icon"> <!--for fav-icon-->
+</head>
+
+<body>
+    <main>
+        <div class="login-container">
+            <div class="login-form">
+                <div class="login-logo">
+                    <img src="../media/images/logo-01.png" alt="TheTraveler Agency">
+                </div>
+
+                <div class="login-buttons">
+                    <button type="button" id="createBtn">Create Account</button>
+                    <button type="button" id="loginBtn">Log in</button>
+                </div>
+
+                <form id="userForm">
+                    <div class="entry-group">
+                        <div class="entry-field" id="nameField">
+                            <i class="fa-solid fa-user"></i>
+                            <label for="name"></label>
+                            <input id="name" name="name" type="text" placeholder="Name">
+                            <div></div>
+                        </div>
+
+                        <div class="entry-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <label for="useremail"></label>
+                            <input id="useremail" name="useremail" type="email" placeholder="Email">
+                            <div></div>
+                            
+                        </div>
+
+                        <div class="entry-field">
+                            <i class="fa-solid fa-lock"></i>
+                            <label for="password1"></label>
+                            <input id="password1" name="password1" type="password" placeholder="Password">
+                            <div></div>
+                        </div>
+
+                        <div class="entry-field" id="password2Field">
+                            <i class="fa-solid fa-lock"></i>
+                            <label for="password2"></label>
+                            <input id="password2" name="password2" type="password" placeholder="Re-enter Password">
+                            <div></div>
+                        </div>
+
+                        <div class="entry-field" id="dobField">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <label for="dob"></label>
+                            <input id="dob" name="dob" type="date" placeholder="Date of Birth">
+                            <div></div>
+                        </div>
+
+                        <div class="login-buttons">
+                            <button type="submit">Submit</button>
+                            <button type="reset">Reset</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./packages.html">Packages</a></li>
+                    <li><a href="./aboutus.html">About <span class="footer-span">Us</span></a></li>
+                    <li><a href="./contactus.html">Contact<span class="footer-span">Us</span></a></li>
+                    <li><a href="./destinations.html">Destinations</a></li>
+                    <li><a href="./mywishlist.html"><span class="footer-span">My</span>wishlist</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright &copy;2023; Designed by <span class="designer"><a href="html/Group-3.html"
+                        target="_blank">Bug-Busters</a></span>
+            </p>
+        </div>
+    </footer>
+</body>
+<script src="../js/java.js"></script>
+</html>
