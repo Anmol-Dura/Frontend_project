@@ -23,11 +23,14 @@ createBtn.onclick = function() {
     password2Field.style.border = "2px";
 }
 
+/* Form Validation */
+
 const form = document.getElementById("userForm"); 
 const username = document.getElementById("name");
 const useremail = document.getElementById("useremail");
 const password1 = document.getElementById("password1");
 const password2 = document.getElementById("password2");
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -55,6 +58,11 @@ function ErrorFunction(input,message) {
 function SuccessFunction(input) {
     const entryField = input.parentElement;
     entryField.className = 'entry-field success';
+}
+
+function resetFields(input) {
+    const entryField = input.parentElement;
+    entryField.className = 'entry-field';
 }
 
 function checkInputs() {
@@ -98,3 +106,15 @@ function checkInputs() {
         SuccessFunction(password2);
     }
 }
+
+
+let resetBtn = document.getElementById("resetBtn"); 
+
+
+form.addEventListener('reset', (e) => {
+    
+    resetFields(username);
+    resetFields(useremail);
+    resetFields(password1);
+    resetFields(password2); 
+});
