@@ -136,10 +136,7 @@ nav.sidebar {
     box-shadow: 0px 0px 8px var(--background);
 }
 
-/* .sidebar a:hover{
-    this property is good in the desktop view.
-    box-shadow: 5px 5px 10px var(--background); /* Horizontal offset, Vertical offset, Blur radius, Shadow color 
-} */
+
 
 .hamburger-menu:has(input:checked)~.sidebar a {
     display: block;
@@ -190,23 +187,19 @@ footer {
 }
 
 .social-icons a i {
-    font-size: 2em;
+    font-size: 1.5rem;
     /* font-size: clamp(1em, 6vw, 2.4em); */
     color: var(--logo-color);
     opacity: 0.9;
 }
 
-/* hover effects n social media icons {will be applied to the desktop view} */
-/* Only applicable on the desktop view of the website */
-/* .social-icons a:hover {
-    background-color: var(--logo-color);
-    transition: 0.5s;
-}
+
 
 .social-icons a:hover i {
     color: var(--background);
     transition: 0.5s;
-} */
+}
+
 
 
 /* footer nav portion */
@@ -263,4 +256,108 @@ span {
 span a {
     text-decoration: none;
     color: var(--background);
+}
+
+/* Media query for tablet view */
+@media only screen and (min-width: 768px) {
+
+    .hamburger-menu,
+    .hamburger-menu::after,
+    .hamburger-menu::before {
+        display: none;
+        pointer-events: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
+    }
+    .logo img {
+        max-width: 6rem;
+    }
+
+    .hamburger-menu:has(input:checked)~nav.sidebar {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background-color: var(--background);
+        box-shadow: none;
+        /* background-color: white; */
+        max-height: 0px;
+        align-items: center;
+        padding: 0;
+        max-width: 100%;
+        margin: 0rem auto;
+        background-color: var(--foreground);
+        border-radius: 0;
+    }
+
+    nav.sidebar {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0;
+        max-width: 100%;
+        margin: 0rem auto;
+        background-color: var(--foreground);
+        border-radius: 0;
+        /* background-color: yellowgreen; */
+        /* margin-top: 20rem; */
+        /* border: 2px solid red; */
+    }
+
+    .sidebar a {
+        display: inline-block;
+        margin: 0 10px;
+        /* font-size: .65rem; @i need a clamp function to have the value from 0.65rem -0.7rem */
+        font-size: clamp(0.6rem, 0.65rem, 1rem);
+        min-width: auto;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        color: var(--background);
+        border: 2px solid var(--foreground);
+        background-color: var(--foreground);
+    }
+    .hamburger-menu:has(input:checked)~nav.sidebar a{
+    border: none;
+    }
+
+
+    /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+
+}
+
+/* Media query for desktop view */
+@media only screen and (min-width: 1024px) {
+
+    /* Add your desktop-specific CSS here */
+
+    .sidebar a {
+        /* font-size: 1rem;@I need a clamp function to have the font-size between 1rem-1.3rem */
+        font-size: clamp(1rem, 1.0rem + 0.1vw, 1.3rem);
+
+    }
+    .logo img {
+        max-width: 7rem;
+    }
+
+    /* Only applicable on the desktop view of the website */
+    .social-icons a:hover {
+        background-color: var(--logo-color);
+        transition: 0.5s;
+    }
+
+    .sidebar a:hover {
+        box-shadow: 5px 5px 10px var(--foreground);
+        transition: 0.2s;
+    }
+
 }
