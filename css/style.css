@@ -339,7 +339,7 @@ input {
     justify-content: space-evenly;
 }
 
-.login-buttons button {
+.login-buttons button, .Button-container button {
     flex-basis: 50%;
     background: rgb(206,17,65);
     color: #fff;
@@ -349,4 +349,54 @@ input {
     outline: 0;
     cursor: pointer;
     transition: background 1s;
+    margin-left: 0.1em;
 }
+/* ====================================================== */
+/* STYLING PACKAGES PAGE */
+
+/* * {
+    border: 1px solid black;
+} */
+.Tablet {
+    display: none;
+}
+
+.Desktop p {
+    display: none;
+}
+
+#Pack-Title , .Packages {
+    text-align: center; 
+    margin: 1em 0;
+    margin-left: 1%;
+    width: 98%;
+    border-radius: 0.5em;
+}
+
+#Pack-Title {
+    background-color: lightgray;
+    color: black;
+}
+
+.Packages  {
+    background-color: rgb(206,17,65);
+    color: white;
+    font-size: 1em;
+}
+
+.Itinerary , .Details {
+    background-color: rgb(253, 253, 253);
+    color: black;
+    margin: 0.5em;
+} 
+
+.Details p {
+    display: inline;
+    margin: 1em ;
+
+}
+
+.Button-container button {
+    background-color: white;
+    color: rgb(206,17,65);
+ }
