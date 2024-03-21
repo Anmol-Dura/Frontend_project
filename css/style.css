@@ -1,36 +1,41 @@
-*, *::before, *::after{
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     /* border: 2px solid black; */
 }
-body{
+
+body {
     margin: 0;
     padding: 0;
     font-family: 'Courier New', Courier, monospace;
 }
+
 /* Designing for the navbar */
-.logo img{
+.logo img {
     float: right;
-    max-width: 5rem;
+    max-width: 4.5rem;
     margin-left: 1rem;
 }
 
 
 /* designing for the hamburger-menu */
-:root{
-    --bar-width: 60px;
-    --bar-height:8px;
+:root {
+    --bar-width: 65px;
+    --bar-height: 10px;
     --hamburger-gap: 6px;
     --foreground: #333;
     --background: white;
     --hamburger-margins: 8px;
     --animation-timing: 200ms ease-in-out;
     /* uses the tignometry to find the hipotinious*/
-    --hamburger-height:calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
     --hamburger-top-margin: 18px;
     /* --logo-color: rgb(165 29 35); */
     --logo-color: var(--foreground);
 }
-.hamburger-menu{
+
+.hamburger-menu {
     /* finding the width of the x */
     --x-width: calc(var(--hamburger-height)* 1.4142135623730950488);
     display: flex;
@@ -38,14 +43,15 @@ body{
     gap: var(--hamburger-gap);
     width: max-content;
     position: absolute;
-    left:var(--hamburger-margins);
+    left: var(--hamburger-margins);
     top: var(--hamburger-top-margin);
     z-index: 2;
     cursor: pointer;
 }
+
 .hamburger-menu::before,
 .hamburger-menu::after,
-.hamburger-menu input{
+.hamburger-menu input {
     content: " ";
     width: var(--bar-width);
     height: var(--bar-height);
@@ -54,102 +60,108 @@ body{
     border-radius: 9999px;
     transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing), translate var(--animation-timing), color var(--animation-timing);
 }
-.hamburger-menu input{
+
+.hamburger-menu input {
     appearance: none;
     margin: 0;
     padding: 0;
     outline: none;
     pointer-events: none;
 }
-.hamburger-menu:has(input:checked)::before{
+
+.hamburger-menu:has(input:checked)::before {
     rotate: 45deg;
     width: var(--x-width);
     translate: 0 calc(var(--bar-height)/-2);
 }
-.hamburger-menu:has(input:checked)::after{
+
+.hamburger-menu:has(input:checked)::after {
     rotate: -45deg;
     width: var(--x-width);
     translate: 0 calc(var(--bar-height)/2);
 }
-.hamburger-menu input:checked{
+
+.hamburger-menu input:checked {
     opacity: 0;
     width: 0;
 }
 
 /* Designing the side bar */
-/* For the sidebar, I want it to change its opacity to 1 when we click the hamburger lines, but when we touch the hamburger again i
-want it to change to 0 agian but after some time, like after the sidebar decreases its sixe to 0vh*/
 nav.sidebar {
-    /* box-shadow: ; */
     display: block;
-    margin: 0 auto ;
+    margin: 35rem auto 3rem;
     width: 95%;
+    min-width: 300px;
     /* Here, the alpha value is 0.5 (50% opacity) */
-    /* background-color: rgba(255, 255, 255, 0.5);  */
-    background-color:var(--foreground);
+    background-color: rgba(255, 255, 255, 0.5);
+    /*for making the background transparent */
+
+    /* background-color:var(--foreground); */
     clear: right;
     /* padding-top: calc(var(--hamburger-top-margin) + var(--hamburger-height) + 1rem); */
-    /* background-color: var(--foreground); */
-    /* max-width: 100%; */
-    height: 0vh;
+    max-height: 0vh;
     z-index: 100;
-    /* border-radius: 3rem; */
     border-radius: 3rem 3rem 3rem 3rem;
+    /*
     transition: all 0.5s ease-in-out;
-    -webkit-transition: height 0.5s ease-in-out; /* WebKit */
-    -moz-transition: height 0.5s ease-in-out; /* Mozilla */
-    -o-transition: height 0.5s ease-in-out; /* Opera */
+    -webkit-transition: height 0.5s ease-in-out; /* WebKit 
+    -moz-transition: height 0.5s ease-in-out; /* Mozilla 
+    -o-transition: height 0.5s ease-in-out; /* Opera 
+*/
     text-align: center;
     padding: 2rem;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-     /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+    /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); */
+    /* overflow: auto; */
+    /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
 
 }
 
-.sidebar a{
-    margin-top: 3rem;
+.sidebar a {
+    margin: 3rem auto 3rem auto;
     display: none;
+    min-width: 200px;
     padding: 1rem;
     border: 2px solid var(--background);
     /* border: transparent; */
     border-radius: 1rem;
     /* pointer-events: none; */
     text-decoration: none;
-    font-size: 1.4rem;
+    /* font-size: 1.4rem; */
+    font-size: clamp(16px, 5vw, 24px);
+    /* The clamp function is used to make the object it is applied responsive without the use of any mediaqueries  */
     color: var(--background);
     box-shadow: none;
     z-index: 1;
     /* transition: all 1s ease-in-out; */
-     box-shadow: 0px 0px 8px var(--background); 
-    /* Horizontal offset, Vertical offset, Blur radius, Shadow color */ 
+    box-shadow: 0px 0px 8px var(--background);
 }
-/* .sidebar a:hover{
-    box-shadow: 5px 5px 10px var(--background); /* Horizontal offset, Vertical offset, Blur radius, Shadow color 
-} */
 
-.hamburger-menu:has(input:checked)~.sidebar a{
+
+
+.hamburger-menu:has(input:checked)~.sidebar a {
     display: block;
     border: 2px solid var(--background);
 }
 
-.hamburger-menu:has(input:checked)~nav.sidebar{
+.hamburger-menu:has(input:checked)~nav.sidebar {
     display: block;
     width: 95%;
-    height: 80vh;
+    max-height: 100vh;
     background-color: var(--foreground);
     /* color: var(--foreground); */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
-
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
 }
 
-.hamburger-menu:has(input:checked)~.sidebar a{
+.hamburger-menu:has(input:checked)~.sidebar a {
     color: var(--background);
     width: inherit;
 }
 
 
+
 /* designing for footer... */
-footer{
+footer {
     background-color: var(--foreground);
     z-index: 200;
     margin-top: 5rem;
@@ -164,6 +176,7 @@ footer{
     display: flex;
     justify-content: center;
 }
+
 .social-icons a {
     text-decoration: none;
     padding: 10px;
@@ -171,27 +184,29 @@ footer{
     background-color: var(--background);
     border-radius: 50%;
 }
+
 .social-icons a i {
-    font-size: 2em;
+    font-size: 1.5rem;
+    /* font-size: clamp(1em, 6vw, 2.4em); */
     color: var(--logo-color);
     opacity: 0.9;
 }
 
-/* hover effects n social media icons */
-.social-icons a:hover {
-    background-color: var(--logo-color);
-    transition: 0.5s;
-}
+
 
 .social-icons a:hover i {
     color: var(--background);
     transition: 0.5s;
 }
 
+
+
 /* footer nav portion */
 .footer-nav {
     margin: 20px 0;
     font-size: 2.5rem;
+    /* font-size: clamp(16px, 2vw, 24px); */
+    /* font-size: clamp(16px, 5vw, 24px); */
 }
 
 .footer-nav ul {
@@ -210,7 +225,7 @@ footer{
     color: var(--background);
     margin: 20px;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     opacity: 0.6;
     transition: 0.5s;
 }
@@ -240,4 +255,132 @@ span {
 span a {
     text-decoration: none;
     color: var(--background);
+}
+
+/* Media query for tablet view */
+@media only screen and (min-width: 768px) {
+
+    .hamburger-menu,
+    .hamburger-menu::after,
+    .hamburger-menu::before {
+        display: none;
+        pointer-events: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .logo img {
+        max-width: 6rem;
+    }
+
+    .hamburger-menu:has(input:checked)~nav.sidebar {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background-color: var(--background);
+        box-shadow: none;
+        /* background-color: white; */
+        max-height: 0px;
+        align-items: center;
+        padding: 0;
+        max-width: 100%;
+        margin: 0rem auto;
+        background-color: var(--foreground);
+        border-radius: 0;
+    }
+
+    nav.sidebar {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0;
+        max-width: 100%;
+        margin: 0rem auto;
+        background-color: var(--foreground);
+        border-radius: 0;
+        /* background-color: yellowgreen; */
+        /* margin-top: 20rem; */
+        /* border: 2px solid red; */
+    }
+
+    .sidebar a {
+        display: inline-block;
+        margin: 0 10px;
+        /* font-size: .65rem; @i need a clamp function to have the value from 0.65rem -0.7rem */
+        font-size: clamp(0.6rem, .67rem, 1rem);
+        min-width: auto;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        color: var(--background);
+        border: 2px solid var(--foreground);
+        background-color: var(--foreground);
+    }
+
+    .hamburger-menu:has(input:checked)~nav.sidebar a {
+        border: none;
+    }
+
+    .footer-nav ul li a {
+        font-size: 1.1rem;
+    }
+
+    /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+
+}
+
+
+
+/* Media query for desktop view */
+@media only screen and (min-width: 1024px) {
+
+    /* Add your desktop-specific CSS here */
+    header {
+        flex-direction: row-reverse;
+        justify-content: center;
+        flex-wrap: nowrap;
+        background-color: #E0E0E0;
+        gap: 0px;
+        padding: 0 1.5rem;
+        margin-top: 0px;
+    }
+
+    .sidebar a {
+        font-size: .9rem;
+    }
+
+    .logo img {
+        max-width: 6rem;
+    }
+
+    /* Only applicable on the desktop view of the website */
+    .social-icons a:hover {
+        background-color: var(--logo-color);
+        transition: 0.5s;
+    }
+
+    .sidebar a:hover {
+        box-shadow: 5px 5px 10px var(--foreground);
+        transition: 0.2s;
+    }
+
+    .footer-nav ul li a {
+        font-size: 1.3rem;
+    }
+
+    .footer-nav ul {
+        flex-direction: row;
+    }
+
+
 }
