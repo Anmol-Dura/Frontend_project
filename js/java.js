@@ -1,4 +1,4 @@
-/* Java Script for Log in Form*/
+/* Java Script to hide some fields from the create for to Log in Form */
 let createBtn = document.getElementById("createBtn");
 let loginBtn = document.getElementById("loginBtn");
 let nameField = document.getElementById("nameField");
@@ -23,7 +23,7 @@ createBtn.onclick = function() {
     password2Field.style.border = "2px";
 }
 
-/* Form Validation */
+// Form Validation
 
 const form = document.getElementById("userForm"); 
 const username = document.getElementById("name");
@@ -31,12 +31,13 @@ const useremail = document.getElementById("useremail");
 const password1 = document.getElementById("password1");
 const password2 = document.getElementById("password2");
 
-
+// To avoid default event when click submit
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     checkInputs();
 });
+
 
 const setError = (element, message) => {
     const inputControl = element.parentElement;
@@ -107,9 +108,8 @@ function checkInputs() {
     }
 }
 
-
+// JS to reset form 
 let resetBtn = document.getElementById("resetBtn"); 
-
 
 form.addEventListener('reset', (e) => {
     
@@ -118,3 +118,25 @@ form.addEventListener('reset', (e) => {
     resetFields(password1);
     resetFields(password2); 
 });
+
+// JavaScript For Packages Page 
+
+function changeIcon(input) {
+    let iconElement = document.getElementById(input);
+    let iconClass = iconElement.className; 
+
+    if(iconClass === "fa-regular fa-heart") {
+        iconElement.className = "fa-solid fa-heart";
+    } else {
+        iconElement.className = "fa-regular fa-heart";
+    }
+
+}
+
+function ShowDayDescription(id) {
+    document.getElementById(id).style.display = "block";
+}
+
+function HideDayDescription(id) {
+    document.getElementById(id).style.display = "none";
+}
