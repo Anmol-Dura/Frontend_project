@@ -14,15 +14,15 @@ body {
 /* Designing for the navbar */
 .logo img {
     float: right;
-    max-width: 5rem;
+    max-width: 4.5rem;
     margin-left: 1rem;
 }
 
 
 /* designing for the hamburger-menu */
 :root {
-    --bar-width: 60px;
-    --bar-height: 8px;
+    --bar-width: 65px;
+    --bar-height: 10px;
     --hamburger-gap: 6px;
     --foreground: #333;
     --background: white;
@@ -165,7 +165,6 @@ footer {
     background-color: var(--foreground);
     z-index: 200;
     margin-top: 5rem;
-
 }
 
 .footer-container {
@@ -226,7 +225,7 @@ footer {
     color: var(--background);
     margin: 20px;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     opacity: 0.6;
     transition: 0.5s;
 }
@@ -276,6 +275,7 @@ span a {
         gap: 1.5rem;
         margin-top: 0.5rem;
     }
+
     .logo img {
         max-width: 6rem;
     }
@@ -317,7 +317,7 @@ span a {
         display: inline-block;
         margin: 0 10px;
         /* font-size: .65rem; @i need a clamp function to have the value from 0.65rem -0.7rem */
-        font-size: clamp(0.6rem, 0.65rem, 1rem);
+        font-size: clamp(0.6rem, .67rem, 1rem);
         min-width: auto;
         padding: 10px 20px;
         border: none;
@@ -326,27 +326,41 @@ span a {
         border: 2px solid var(--foreground);
         background-color: var(--foreground);
     }
-    .hamburger-menu:has(input:checked)~nav.sidebar a{
-    border: none;
+
+    .hamburger-menu:has(input:checked)~nav.sidebar a {
+        border: none;
     }
 
+    .footer-nav ul li a {
+        font-size: 1.1rem;
+    }
 
     /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
 
 }
 
+
+
 /* Media query for desktop view */
 @media only screen and (min-width: 1024px) {
 
     /* Add your desktop-specific CSS here */
+    header {
+        flex-direction: row-reverse;
+        justify-content: center;
+        flex-wrap: nowrap;
+        background-color: #E0E0E0;
+        gap: 0px;
+        padding: 0 1.5rem;
+        margin-top: 0px;
+    }
 
     .sidebar a {
-        /* font-size: 1rem;@I need a clamp function to have the font-size between 1rem-1.3rem */
-        font-size: clamp(1rem, 1.0rem + 0.1vw, 1.3rem);
-
+        font-size: .9rem;
     }
+
     .logo img {
-        max-width: 7rem;
+        max-width: 6rem;
     }
 
     /* Only applicable on the desktop view of the website */
@@ -359,5 +373,14 @@ span a {
         box-shadow: 5px 5px 10px var(--foreground);
         transition: 0.2s;
     }
+
+    .footer-nav ul li a {
+        font-size: 1.3rem;
+    }
+
+    .footer-nav ul {
+        flex-direction: row;
+    }
+
 
 }
