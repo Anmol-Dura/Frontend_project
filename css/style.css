@@ -136,6 +136,14 @@ nav.sidebar {
     box-shadow: 0px 0px 8px var(--background);
 }
 
+.hamburger-menu:has(input:checked)~nav div .desktop-only{
+    display: none;
+
+}
+/* nav div .desktop-only{
+    display: none;
+
+} */
 
 
 .hamburger-menu:has(input:checked)~.sidebar a {
@@ -274,6 +282,7 @@ span a {
         justify-content: center;
         gap: 1.5rem;
         margin-top: 0.5rem;
+        /* border: 2px solid var(--foreground); */
     }
 
     .logo img {
