@@ -8,7 +8,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Designing for the navbar */
@@ -257,135 +257,8 @@ span a {
     color: var(--background);
 }
 
-/* Media query for tablet view */
-@media only screen and (min-width: 768px) {
-
-    .hamburger-menu,
-    .hamburger-menu::after,
-    .hamburger-menu::before {
-        display: none;
-        pointer-events: none;
-    }
-
-    header {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 0.5rem;
-    }
-
-    .logo img {
-        max-width: 6rem;
-    }
-
-    .hamburger-menu:has(input:checked)~nav.sidebar {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        background-color: var(--background);
-        box-shadow: none;
-        /* background-color: white; */
-        max-height: 0px;
-        align-items: center;
-        padding: 0;
-        max-width: 100%;
-        margin: 0rem auto;
-        background-color: var(--foreground);
-        border-radius: 0;
-    }
-
-    nav.sidebar {
-        display: flex;
-        justify-content: center;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        align-items: center;
-        padding: 0;
-        max-width: 100%;
-        margin: 0rem auto;
-        background-color: var(--foreground);
-        border-radius: 0;
-        /* background-color: yellowgreen; */
-        /* margin-top: 20rem; */
-        /* border: 2px solid red; */
-    }
-
-    .sidebar a {
-        display: inline-block;
-        margin: 0 10px;
-        /* font-size: .65rem; @i need a clamp function to have the value from 0.65rem -0.7rem */
-        font-size: clamp(0.6rem, .67rem, 1rem);
-        min-width: auto;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        color: var(--background);
-        border: 2px solid var(--foreground);
-        background-color: var(--foreground);
-    }
-
-    .hamburger-menu:has(input:checked)~nav.sidebar a {
-        border: none;
-    }
-
-    .footer-nav ul li a {
-        font-size: 1.1rem;
-    }
-
-    /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
-
-}
-
-
-
-/* Media query for desktop view */
-@media only screen and (min-width: 1024px) {
-
-    /* Add your desktop-specific CSS here */
-    header {
-        flex-direction: row-reverse;
-        justify-content: center;
-        flex-wrap: nowrap;
-        background-color: #E0E0E0;
-        gap: 0px;
-        padding: 0 1.5rem;
-        margin-top: 0px;
-    }
-
-    .sidebar a {
-        font-size: .9rem;
-    }
-
-    .logo img {
-        max-width: 6rem;
-    }
-
-    /* Only applicable on the desktop view of the website */
-    .social-icons a:hover {
-        background-color: var(--logo-color);
-        transition: 0.5s;
-    }
-
-    .sidebar a:hover {
-        box-shadow: 5px 5px 10px var(--foreground);
-        transition: 0.2s;
-    }
-
-    .footer-nav ul li a {
-        font-size: 1.3rem;
-    }
-
-    .footer-nav ul {
-        flex-direction: row;
-    }
-
-
-}
-
-/* Log in Page Mobile Desing*/
+/*=====================================================================*/
+/* SYLING LON IN PAGE MOBILE*/
 /* Styling Sing up and Create Account forms*/
 
 .login-logo img {
@@ -409,12 +282,12 @@ span a {
     max-width: 95%;
     /* position: absolute; */
     margin: auto;
-    /* top: 0; */
-    /* left: 50%; */
-    /* margin: -57vh 0 0 -26.5vh; */
+    /* top: 0;
+    left: 50%;
+    margin: -57vh 0 0 -26.5vh; */
     background: #fff;
     text-align: center;
-    padding: 0 3em 3em;
+    padding: 0 2em 2em;
     display: block;
     align-items: center;
     
@@ -512,6 +385,20 @@ input {
     display: none;
 }
 
+.pack-container{
+    background-image: url(../media/images/banff.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: auto;
+}
+
+.pack-container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 #Pack-Title , .Packages {
     text-align: center; 
     margin: 1em 0;
@@ -521,7 +408,7 @@ input {
 }
 
 #Pack-Title {
-    background-color: lightgray;
+    background-color: rgba(0, 0, 0, 0.3);
     color: black;
 }
 
@@ -536,6 +423,7 @@ input {
     color: black;
     margin: 0.5em;
     border-radius: 0.5em;
+    line-height: 1.2em;
 } 
 
 .Details p {
@@ -558,3 +446,175 @@ input {
     color: rgb(206,17,65);
  }
 
+
+/* Media query for tablet view */
+@media only screen and (min-width: 768px) {
+
+    .hamburger-menu,
+    .hamburger-menu::after,
+    .hamburger-menu::before {
+        display: none;
+        pointer-events: none;
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .logo img {
+        max-width: 6rem;
+    }
+
+    .hamburger-menu:has(input:checked)~nav.sidebar {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        background-color: var(--background);
+        box-shadow: none;
+        /* background-color: white; */
+        max-height: 0px;
+        align-items: center;
+        padding: 0;
+        max-width: 100%;
+        margin: 0rem auto;
+        background-color: var(--foreground);
+        border-radius: 0;
+    }
+
+    nav.sidebar {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0;
+        max-width: 100%;
+        margin: 0rem auto;
+        background-color: var(--foreground);
+        border-radius: 0;
+        /* background-color: yellowgreen; */
+        /* margin-top: 20rem; */
+        /* border: 2px solid red; */
+    }
+
+    .sidebar a {
+        display: inline-block;
+        margin: 0 10px;
+        /* font-size: .65rem; @i need a clamp function to have the value from 0.65rem -0.7rem */
+        font-size: clamp(0.6rem, .67rem, 1rem);
+        min-width: auto;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        color: var(--background);
+        border: 2px solid var(--foreground);
+        background-color: var(--foreground);
+    }
+
+    .hamburger-menu:has(input:checked)~nav.sidebar a {
+        border: none;
+    }
+
+    .footer-nav ul li a {
+        font-size: 1.1rem;
+    }
+
+    /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+
+    /*  STYLING PACKAGES PAGE*/
+    
+    .Itinerary {
+        float: left;
+        width: 48%;
+    }
+
+}
+
+
+
+/* Media query for desktop view */
+@media only screen and (min-width: 1024px) {
+
+    /* Add your desktop-specific CSS here */
+    header {
+        flex-direction: row-reverse;
+        justify-content: center;
+        flex-wrap: nowrap;
+        background-color: #E0E0E0;
+        gap: 0px;
+        padding: 0 1.5rem;
+        margin-top: 0px;
+    }
+
+    .sidebar a {
+        font-size: .9rem;
+    }
+
+    .logo img {
+        max-width: 6rem;
+    }
+
+    /* Only applicable on the desktop view of the website */
+    .social-icons a:hover {
+        background-color: var(--logo-color);
+        transition: 0.5s;
+    }
+
+    .sidebar a:hover {
+        box-shadow: 5px 5px 10px var(--foreground);
+        transition: 0.2s;
+    }
+
+    .footer-nav ul li a {
+        font-size: 1.3rem;
+    }
+
+    .footer-nav ul {
+        flex-direction: row;
+    }
+
+    
+    /*  STYLING PACKAGES PAGE*/
+    
+    .Itinerary {
+        float: none;
+    }
+
+    .Desktop {
+        display: block;
+    }
+
+    .Tablet img {
+        height: 45vh;
+    }
+
+    .Map {
+        overflow: hidden;
+    }
+
+    .Packages {
+        float: left;
+        width: 31%;
+        margin-left: 2%;
+    }
+
+    .Itinerary, .Details, .Map {
+        width: 95%;
+        margin-left: 2.2%;
+    }
+
+    footer {
+        clear: both;
+    }
+
+
+
+
+
+}
