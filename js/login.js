@@ -8,6 +8,8 @@ let password2Field = document.getElementById("password2Field");
 let submitBtn = document.getElementById("submit2");
 let resetBtn2 = document.getElementById("resetBtn");
 
+localStorage.setItem('islogged',false);
+
 loginBtn.onclick = function(){
     LoginBtn();
 }
@@ -165,9 +167,6 @@ form.addEventListener('reset', (e) => {
     resetFields(password2); 
 });
 
-
-
-
 function nameTaken(useremail){
     let nameTaken = localStorage.getItem(useremail);
     if (nameTaken !== null){
@@ -204,6 +203,7 @@ function logIn(useremail) {
         console.log(password1);
         if (storepassword === password1.value){
             alert('You successfully Log in!')
+            localStorage.setItem('islogged',true);
             window.location.href = 'packages.html';
         }
         else {
@@ -219,24 +219,3 @@ function logIn(useremail) {
 }
 
 
-// JavaScript For Packages Page 
-
-function changeIcon(input) {
-    let iconElement = document.getElementById(input);
-    let iconClass = iconElement.className; 
-
-    if(iconClass === "fa-regular fa-heart") {
-        iconElement.className = "fa-solid fa-heart";
-    } else {
-        iconElement.className = "fa-regular fa-heart";
-    }
-
-}
-
-function ShowDayDescription(id) {
-    document.getElementById(id).style.display = "block";
-}
-
-function HideDayDescription(id) {
-    document.getElementById(id).style.display = "none";
-}
