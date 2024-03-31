@@ -151,6 +151,7 @@ function checkInputs() {
 
         // If the validUser.lenght is 0 that means there are no error classes
         if(validUser.length === 0) {
+            localStorage.setItem('name',username.value)
             addUser(useremailValue,password1Value);
         
         }
