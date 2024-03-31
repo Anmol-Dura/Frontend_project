@@ -5,7 +5,17 @@ function handleViewportChange() {
         let nav = document.querySelector('.sidebar');
         let newElement = document.createElement("div");
         newElement.className = 'new-element'; // Add a class for easy identification
-        newElement.innerHTML = '<a href="./pages/packages.html">Packages</a>';
+        // Check if the current page is the home page
+        if ((window.location.pathname === '/') || (window.location.pathname === '/index.html')) {
+            // Apply actions for the home page
+            newElement.innerHTML = '<a href="./pages/packages.html">Packages</a>';
+            // Add your code specific to the home page here
+        } else {
+            // Apply actions for other pages
+            newElement.innerHTML = '<a href="./packages.html">Packages</a>';
+            // Add your code specific to other pages here
+        }
+
         nav.appendChild(newElement);
         counter = 1; // Increment counter to indicate the link has been appended
     } else if (window.innerWidth < 768) {
