@@ -11,12 +11,8 @@ document.addEventListener('DOMContentLoaded', function(){
         let name = localStorage.getItem('name');
         title.textContent = `Welcome ${name} to your Wishlist`;
         logTab.textContent = "LogOut"
-    }
-    else {
-        title.textContent = 'Welcome! Please Log in to access your Wishlist';
-    }
 
-    let wishPack1 = localStorage.getItem('pack1');
+        let wishPack1 = localStorage.getItem('pack1');
     let wishPack2 = localStorage.getItem('pack2');
     let wishPack3 = localStorage.getItem('pack3');
 
@@ -118,6 +114,12 @@ document.addEventListener('DOMContentLoaded', function(){
     function RemovePack(packtoRemove){
         localStorage.setItem(packtoRemove, false);
     }
+    }
+    else {
+        title.textContent = 'Welcome! Please Log in to access your Wishlist';
+    }
+
+    
 
 
 
