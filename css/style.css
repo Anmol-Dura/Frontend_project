@@ -592,22 +592,6 @@ input {
     }
 }
 
-/* Estilos desktop */
-@media only screen and (min-width: 601px) {
-    .destination-description.mobile {
-        display: none; /* Oculta la versión resumida en dispositivos de escritorio */
-    }
-
-    .destination-description.desktop {
-        display: block; /* Muestra la versión completa en dispositivos de escritorio */
-    }
-
-    /* Oculta el enlace 'Read more' en la versión de escritorio */
-    .destination-description.desktop .read-more {
-        display: none;
-    }
-}
-
 
 /* Estilos dektop */
 @media only screen and (min-width: 601px) {
