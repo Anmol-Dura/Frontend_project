@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/login.js" defer></script>
     <script src="https://kit.fontawesome.com/c5017c04fb.js" crossorigin="anonymous"></script>
     <link rel="icon" href="../media/images/MicrosoftTeams-image.png" type="image/x-icon"> <!--for fav-icon-->
 </head>
@@ -40,7 +39,7 @@
                             
                         </div>
 
-                        <div class="entry-field">
+                        <div class="entry-field" id="password1Field">
                             <i class="fa-solid fa-lock"></i>
                             <label for="password1"></label>
                             <input id="password1" name="password1" type="password" placeholder="Password">
@@ -54,6 +53,14 @@
                             <div></div>
                         </div>
 
+                        <div class="entry-field" id ="genderField">
+                            <label for="male">Male</label>
+                            <input type="radio" id="male" name="gender" value="male">
+                            
+                            <label for="female">Female</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                        </div>
+
                         <div class="entry-field" id="dobField">
                             <i class="fa-solid fa-calendar-days"></i>
                             <label for="dob"></label>
@@ -62,7 +69,7 @@
                         </div>
 
                         <div class="login-buttons">
-                            <button type="submit" id="submit2">Submit</button>
+                            <button type="submit" id="submit-Login">Submit</button>
                             <button type="reset" id="resetBtn">Reset</button>
                         </div>
 
@@ -73,7 +80,7 @@
         </div>
 
     </main>
-    <script src="../js/java.js"></script>
+    <script src="../js/indexDB.js"></script>
 </body>
 
 </html>
