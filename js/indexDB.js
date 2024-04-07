@@ -24,6 +24,7 @@ window.onload = function() {
     request.onsuccess = function() {
         console.log('Database opened successfully');
         db = request.result;
+        console.log(db)
     }
 
     //This function will run just once, unless someone delete the DB
@@ -43,6 +44,9 @@ window.onload = function() {
         objectStore.createIndex ('Password', 'userPassword', {unique:false});
         objectStore.createIndex ('Female', 'userFemale', {unique:false});
         objectStore.createIndex ('DateOfBirth', 'userDOB', {unique:false});
+        objectStore.createIndex ('Pack1', 'pack1' , {unique:false});
+        objectStore.createIndex ('Pack2', 'pack2' , {unique:false});
+        objectStore.createIndex ('Pack3', 'pack3' , {unique:false});
 
         console.log('DB setup Complete!')
     }
@@ -210,7 +214,7 @@ function addUser(){
 
     // Create a new object that will hold the values that are inside the form
     
-    let newUser = {userName: nameInput.value, userEmail: emailInput.value, userPassword: password1Input.value, userFemale: femaleInput.checked, userDOB: dateOfBirthInput.value}
+    let newUser = {userName: nameInput.value, userEmail: emailInput.value, userPassword: password1Input.value, userFemale: femaleInput.checked, userDOB: dateOfBirthInput.value, pack1 : false, pack2: false, pack3: false}
 
     // Create a new object that will hold the DB and the transaction
     let transaction = db.transaction(['usersAccount'],'readwrite');
@@ -262,6 +266,9 @@ function logIn(email, password)  {
                 localStorage.setItem('islogged',true);
                 localStorage.setItem('user', emailInput.value);
                 localStorage.setItem('name', user.userName);
+                localStorage.setItem('pack1', user.pack1);
+                localStorage.setItem('pack2', user.pack2);
+                localStorage.setItem('pack3', user.pack3);
                 window.location.href = 'packages.html';
             }
             else {
