@@ -1,5 +1,6 @@
-let user = localStorage.getItem('user')
+
 document.addEventListener('DOMContentLoaded', function(){
+    let userLoggedEmail = localStorage.getItem('user')
     let logTab = document.getElementById('logout');
     let userLogged = localStorage.getItem('islogged');
     const title = document.getElementById('List-Title');
@@ -30,8 +31,9 @@ document.addEventListener('DOMContentLoaded', function(){
             
             let btnRemove1 = document.getElementById('remove1');
             btnRemove1.addEventListener('click', function(){
-            RemovePack('pack1');
-            location.reload();
+            RemovePack(userLoggedEmail, 'pack1');
+            console.log('I am back here')
+            //location.reload();
             })
 
         } 
@@ -47,8 +49,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
             let btnRemove2 = document.getElementById('remove2');
             btnRemove2.addEventListener('click', function(){
-                RemovePack('pack2');
-                location.reload();
+                RemovePack(userLoggedEmail,'pack2');
+                console.log('I am back here')
+                //location.reload();
             })
         } 
 
@@ -62,8 +65,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
             let btnRemove3 = document.getElementById('remove3');
             btnRemove3.addEventListener('click', function(){
-                RemovePack('pack3');
-                location.reload();
+                RemovePack(userLoggedEmail,'pack3');
+                console.log('I am back here')
+                //location.reload();
             })
         }
 
@@ -113,9 +117,9 @@ document.addEventListener('DOMContentLoaded', function(){
             container.appendChild(div);
         }
 
-        function RemovePack(packtoRemove){
+        function RemovePack(user, packtoRemove){
             localStorage.setItem(packtoRemove, false);
-            updatePack(user,packtoRemove,false)
+            updatePack(user, packtoRemove, false);
         }
     }
     else {
@@ -137,6 +141,7 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 function updatePack(email , pack, value ){
+    console.log(pack)
     let db;
 
     // Request to open a DB, which we will call users, version 1
@@ -170,6 +175,7 @@ function updatePack(email , pack, value ){
     
                 updateRequest.onsuccess =function(){
                     console.log(`El atributo ${pack} del usuario ha sido actualizado.`)
+                    location.reload();
                 }
     
                 updateRequest.onerror = function() {
@@ -178,10 +184,6 @@ function updatePack(email , pack, value ){
             } else {
                 console.log('Usuario No encontrado')
             }
-    
-    
         }
     }
-
-
 }
