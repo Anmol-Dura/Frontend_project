@@ -394,9 +394,20 @@ input {
     display: none;
 } */
 
+.Desktop h4 {
+    background-color: #333;
+    width: 85%;
+    margin: 1% auto;
+    padding: 2%;
+    border-radius: 1em;
+    color: white;
+}
+
+
 .Packages img {
     width: 95%;
 }
+
 .Desktop p , .Map{
     display: none;
 }
@@ -548,6 +559,11 @@ input {
     
     .Itinerary {
         float: left;
+        width: 45%;
+    }
+
+    .Details {
+        float: right;
         width: 48%;
     }
 
@@ -629,9 +645,5 @@ input {
     footer {
         clear: both;
     }
-
-
-
-
 
 }
