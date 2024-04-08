@@ -367,6 +367,22 @@ input {
     transition: background 1s;
     margin-left: 0.1em;
 }
+
+#progressBar {
+    margin-top: 3%;
+    width: 100%;
+    background-color: #ddd;
+}
+
+#progress {
+    width: 0%;
+    height: 20px;
+    background-color: rgb(206,17,65);
+    text-align: center;
+    line-height: 20px;
+    color: white;
+}
+
 /* ====================================================== */
 /* STYLING PACKAGES PAGE */
 
@@ -416,6 +432,7 @@ input {
     background-color: rgb(206,17,65);
     color: white;
     font-size: 1.3em;
+    overflow: auto;
 }
 
 .Itinerary , .Details {

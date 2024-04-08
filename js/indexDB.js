@@ -7,6 +7,9 @@ const password2Input = document.querySelector('#password2');
 const maleInput = document.querySelector('#male');
 const femaleInput = document.querySelector('#female');
 const dateOfBirthInput = document.querySelector('#dob');
+const progressDiv = document.querySelector('#progressBar')
+let formElements = document.querySelectorAll('#userForm input');
+let progressBar = document.getElementById('progress');
 
 // Initiate our db in our app or web browser, we use the 
 // window object and the onload event. 
@@ -76,6 +79,8 @@ loginBtn.onclick = function(){
     password2Field.style.border = "0";
     genderField.style.border = "0";
     submitBtn.innerHTML = "Log In";
+    progressDiv.style.visibility = "hidden";
+
 }
 
 createBtn.onclick = function() {
@@ -88,6 +93,7 @@ createBtn.onclick = function() {
     password2Field.style.border = "2px";
     genderField.style.border = "2px";
     submitBtn.innerHTML = "Submit";
+    progressDiv.style.visibility = "visible";
 }
 
 
@@ -207,6 +213,7 @@ form.addEventListener('reset', (e) => {
     resetFields(emailInput);
     resetFields(password1Input);
     resetFields(password2Input);
+    updateProgressBar();
 });
 
 // Function to add users to the database
@@ -237,12 +244,16 @@ function addUser(){
     // Print a success msg if the transaction is completed successfully
     transaction.oncomplete =  function() {
         alert('Your account has been created. Please log in!')
+        progressBar.style.width = '0%'; 
+        progressBar.textContent = '0%'; 
         loginBtn.click();
     }
 
     // Print an error if the transaction was not able to complet
     transaction.onerror = function(){
         alert('Your already have an account. Please log in!')
+        progressBar.style.width = '0%'; 
+        progressBar.textContent = '0%'; 
         loginBtn.click();
     }
 
@@ -283,3 +294,38 @@ function logIn(email, password)  {
     }
 
 }
+
+
+
+function updateProgressBar() {
+    let filledElements = 0;
+    let totalElements = 0;
+
+    formElements.forEach(function(element) {
+
+        // Count # of elements in the form without radio buttons
+        if (element.type !== 'radio') {
+            totalElements++;
+            if (element.value) {
+                filledElements++;
+            }
+        }
+    });
+
+    // Count radio buttons as just one field
+    let radioButtons = document.querySelectorAll('input[type="radio"]:checked');
+    if (radioButtons.length > 0) {
+        totalElements++;
+        filledElements++;
+    }
+
+    // Calculate the percentaje to fill the progress Bar
+    let progressPercentage = (filledElements / totalElements) * 100;
+    progressBar.style.width = progressPercentage + '%';
+    progressBar.textContent = progressPercentage.toFixed(0) + '%';
+}
+
+// loop to create an input event on each one of the elements of the form
+formElements.forEach(function(element) {
+    element.addEventListener('input', updateProgressBar);
+});
