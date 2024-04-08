@@ -295,8 +295,6 @@ function logIn(email, password)  {
 
 }
 
-
-
 function updateProgressBar() {
     let filledElements = 0;
     let totalElements = 0;
@@ -325,7 +323,8 @@ function updateProgressBar() {
     progressBar.textContent = progressPercentage.toFixed(0) + '%';
 }
 
-// loop to create an input event on each one of the elements of the form
-formElements.forEach(function(element) {
-    element.addEventListener('input', updateProgressBar);
-});
+formElements.forEach(function(element){
+    element.addEventListener('input',updateProgressBar)
+})
+
+
