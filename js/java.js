@@ -44,7 +44,7 @@ let handleViewportChange = function () {
     if ((window.innerWidth >= 768 && checkbox.checked) || (window.innerWidth >= 768)) {
         desktopOnly.style.display = 'block';
     } else {
-        desktopOnly.style.display = 'none'; 
+        desktopOnly.style.display = 'none';
     }
 }
 
@@ -54,3 +54,10 @@ handleViewportChange();
 // Add event listener to handle changes in viewport size and checkbox state
 window.addEventListener('resize', handleViewportChange);
 checkbox.addEventListener('change', handleViewportChange);
+
+
+
+
+
+// I am planning to make some changes to the js making the images collection divs in the .services-container 
+//me movable with the rotation of the mouse middle button 
