@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let logTab = document.getElementById('logout');
     let userLogged = localStorage.getItem('islogged');
     const title = document.getElementById('List-Title');
+    const optionBtns = document.querySelector('.PackBtn-container');
     const packContainer = document.getElementById('wishlist-container');
     const pack1Itinerary = ["Day 1: Arrival in Calgary", "Day 2: Calgary to Canmore", "Day 3: Canmore to Banff", "Day 4: Banff-Lake Minnewanka","Day 5: Explote Banff National", "Day 6: Lake Louise"];
     const pack2Itinerary = ["Day 1: Arrival in Niagara Falls","Day 2: Niagara Falls Attractions","Day 3: Travel to Toronto","Day 4: Exploring Toronto","Day 5: Blue Montain Resort"];
@@ -14,6 +15,19 @@ document.addEventListener('DOMContentLoaded', function(){
         
         title.textContent = `Welcome ${name} to your Wishlist`;
         logTab.textContent = "LogOut"
+
+        let userInfoBtn = document.createElement('button');
+        userInfoBtn.textContent = "Personal Info";
+        optionBtns.appendChild(userInfoBtn);
+
+        let searchPackBtn = document.createElement('button');
+        searchPackBtn.textContent = "Search Packages";
+
+        searchPackBtn.addEventListener('click', function(){
+            window.location.href = 'packages.html';
+        })
+        optionBtns.appendChild(searchPackBtn);
+
 
         let wishPack1 = localStorage.getItem('pack1');
         let wishPack2 = localStorage.getItem('pack2');

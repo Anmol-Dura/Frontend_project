@@ -441,6 +441,19 @@ input {
     color: black;
 }
 
+.PackBtn-container button {
+    background: rgb(206,17,65);
+    color: #fff;
+    border: solid rgb(206,17,65);
+    border-radius: 0.5em;
+    height: 2.5em;
+    margin: 2%;
+}
+
+.PackBtn-container {
+    text-align: center;
+}
+
 .Packages  {
     background-color: rgb(206,17,65);
     color: white;
