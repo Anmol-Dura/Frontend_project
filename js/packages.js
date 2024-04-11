@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let userLogged = localStorage.getItem('islogged');
 
     let wishlistItems = document.querySelectorAll(".Wishlist");
-    if (userLogged === 'true'){
+    if (userLogged){
         wishlistItems.forEach(function(item) {
             item.style.visibility = 'visible';
         });
@@ -172,4 +172,24 @@ function updatePack(email , pack, value ){
     }
 
 
+}
+
+document.getElementById("searchInput").addEventListener("input", function() {
+    filterPackages();
+});
+
+function filterPackages() {
+    let input = document.getElementById("searchInput").value.toUpperCase();
+    let packages = document.getElementsByClassName("Packages");
+
+    for (let i = 0; i < packages.length; i++) {
+        let title = packages[i].getElementsByTagName("h2")[0].innerText.toUpperCase();
+        let description = packages[i].querySelector(".Itinerary").innerText.toUpperCase();
+        let location = packages[i].querySelector(".Details").innerText.toUpperCase();
+        if (title.indexOf(input) > -1 || description.indexOf(input) > -1 || location.indexOf(input) > -1) {
+            packages[i].style.display = "";
+        } else {
+            packages[i].style.display = "none";
+        }
+    }
 }

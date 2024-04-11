@@ -484,15 +484,32 @@ input {
     margin-bottom: 0.5em;
  }
 
- .Packages:hover {
+.Packages:hover {
     background-color: black;
     color: rgb(206,17,65);
- }
+}
+
+.mobile {
+    max-width: 95%;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+.mobile i, .mobile input {
+    font-size: 1.2em;;
+}
+
+.mobile input {
+    font-size: 1.2em;;
+}
 
 
 /* Media query for tablet view */
 @media only screen and (min-width: 768px) {
 
+    .mobile {
+        visibility: hidden;
+    }
     .hamburger-menu,
     .hamburger-menu::after,
     .hamburger-menu::before {
