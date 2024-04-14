@@ -277,6 +277,7 @@ function logIn(email, password)  {
                 localStorage.setItem('islogged',true);
                 localStorage.setItem('user', emailInput.value);
                 localStorage.setItem('name', user.userName);
+                localStorage.setItem('dob', user.userDOB);
                 localStorage.setItem('pack1', user.pack1);
                 localStorage.setItem('pack2', user.pack2);
                 localStorage.setItem('pack3', user.pack3);

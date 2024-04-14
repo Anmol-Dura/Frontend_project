@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function(){
     const pack1Itinerary = ["Day 1: Arrival in Calgary", "Day 2: Calgary to Canmore", "Day 3: Canmore to Banff", "Day 4: Banff-Lake Minnewanka","Day 5: Explote Banff National", "Day 6: Lake Louise"];
     const pack2Itinerary = ["Day 1: Arrival in Niagara Falls","Day 2: Niagara Falls Attractions","Day 3: Travel to Toronto","Day 4: Exploring Toronto","Day 5: Blue Montain Resort"];
     const pack3Itinerary = ["Day 1: Arrival in Montreal","Day 2: Discovering Montreal","Day 3: Travel to Quebec City","Day 4: Exploring Quebec","Day 5: Hallifax","Day 6: Hallifax Attractions"];
+    let userInfoDiv = document.querySelector('.user-Info');
+    userInfoDiv.style.display = "none";
 
     if (userLogged === 'true'){
         let name = localStorage.getItem('name');
@@ -19,6 +21,38 @@ document.addEventListener('DOMContentLoaded', function(){
         let userInfoBtn = document.createElement('button');
         userInfoBtn.textContent = "Personal Info";
         optionBtns.appendChild(userInfoBtn);
+
+        userInfoBtn.addEventListener('click', function(){
+
+            if(userInfoDiv.innerHTML === ""){
+                let userEmail =  localStorage.getItem('user');
+                createInput("Email: ", userEmail, userInfoDiv, true);
+    
+                let userName = localStorage.getItem('name');
+                createInput("Name: ", userName, userInfoDiv, false);
+
+                let userDOB = localStorage.getItem('dob');
+                createInput("DOB: ",userDOB,userInfoDiv, false); 
+
+                userInfoDiv.style.display = "flex";
+            } else {
+                userInfoDiv.innerHTML = "";
+                userInfoDiv.style.display = "none";
+            }
+
+        })
+
+        function createInput(labelText, inputValue, divToAdd, block){
+            let label =  document.createElement('label');
+            label.textContent = labelText;
+            let input =  document.createElement('input');
+            input.value = inputValue;
+            if (block){
+                input.setAttribute('readonly','readonly');
+            }
+            divToAdd.appendChild(label);
+            divToAdd.appendChild(input);
+        }
 
         let searchPackBtn = document.createElement('button');
         searchPackBtn.textContent = "Search Packages";
