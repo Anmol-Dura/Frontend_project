@@ -15,6 +15,15 @@
       href="./media/images/MicrosoftTeams-image.png"
       type="image/x-icon"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      * {
+        /*border: 2px solid red;*/
+      }
+    </style>
     <!--for fav-icon-->
   </head>
 
@@ -92,26 +101,46 @@
         </section>
 
         <section class="testimonial-section">
-          <h2 class="content-heading">What Our Customers Say</h2>
+          <h2 class="content-heading">Our Customers</h2>
           <div class="testimonial-container">
-            <div class="testimonial">
+            <!-- <div class="testimonial" id="testimonial-1">
               <img src="./media/images/customer1.jpg" alt="customer image" />
               <p>
                 "I had an amazing experience with GrandProject Travel Agency.
                 The staff was friendly and helpful, and the trip was
                 unforgettable."
               </p>
-              <h4>John Doe</h4>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <h4 class="customer-name">John Doe</h4>
             </div>
-            <div class="testimonial">
-              <img src="./media/images/customer2.jpg" alt="customer image" />
-              <p>
-                "GrandProject Travel Agency made my dream vacation a reality. I
-                highly recommend their services."
-              </p>
-              <h4>Jane Smith</h4>
-            </div>
+            <hr /> -->
           </div>
+          <form id="newReview" class="review-section">
+            <input
+              type="text"
+              placeholder="Your Name"
+              name="todoInput"
+              id="name"
+            />
+            <textarea
+              placeholder="Your Message"
+              name="message"
+              width="100%"
+              id="message"
+            ></textarea>
+            <div class="star-section">
+              <span class="fa fa-star unchecked" id="star-1"></span>
+              <span class="fa fa-star unchecked" id="star-2"></span>
+              <span class="fa fa-star unchecked" id="star-3"></span>
+              <span class="fa fa-star unchecked" id="star-4"></span>
+              <span class="fa fa-star unchecked" id="star-5"></span>
+            </div>
+            <button class="btn-review" id="submit">Add Review</button>
+          </form>
         </section>
       </div>
     </main>
