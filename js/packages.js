@@ -4,15 +4,15 @@ document.addEventListener('DOMContentLoaded', function(){
     let userLogged = localStorage.getItem('islogged');
 
     let wishlistItems = document.querySelectorAll(".Wishlist");
-    if (userLogged){
+    if (userLogged == 'true'){
         wishlistItems.forEach(function(item) {
-            item.style.visibility = 'visible';
+            item.style.display = 'block';
         });
         logTab.textContent = "LogOut"
     }
     else {
         wishlistItems.forEach(function(item) {
-            item.style.visibility = 'hidden';
+            item.style.display = 'none';
         });
     }
 })
