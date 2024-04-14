@@ -301,12 +301,17 @@ function updateProgressBar() {
     let totalElements = 0;
 
     formElements.forEach(function(element) {
-
-        // Count # of elements in the form without radio buttons
-        if (element.type !== 'radio') {
-            totalElements++;
-            if (element.value) {
-                filledElements++;
+        // Get the computed style of the element
+        let computedStyle = window.getComputedStyle(element);
+        
+        // Check if the element is visible
+        if (computedStyle.display !== 'none' && computedStyle.visibility !== 'hidden') {
+            // Count # of elements in the form without radio buttons
+            if (element.type !== 'radio') {
+                totalElements++;
+                if (element.value) {
+                    filledElements++;
+                }
             }
         }
     });

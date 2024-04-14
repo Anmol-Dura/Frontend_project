@@ -351,6 +351,10 @@ input {
     visibility: visible;
 }
 
+.Tablet {
+    display: none;
+}
+
 .login-buttons {
     width: 100%;
     display: flex;
@@ -499,12 +503,18 @@ input {
     font-size: 1.2em;;
 }
 
+
 /* Media query for tablet view */
 @media only screen and (min-width: 768px) {
 
     .mobile {
         visibility: hidden;
     }
+
+    .Tablet {
+        display: flex;
+    }
+
     .hamburger-menu,
     .hamburger-menu::after,
     .hamburger-menu::before {
