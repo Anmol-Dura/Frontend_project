@@ -33,12 +33,14 @@ document.addEventListener('DOMContentLoaded', function(){
 
                 let userDOB = localStorage.getItem('dob');
                 createInput("DOB: ",userDOB,userInfoDiv, false); 
-
+                
                 userInfoDiv.style.display = "flex";
             } else {
                 userInfoDiv.innerHTML = "";
                 userInfoDiv.style.display = "none";
             }
+
+
 
         })
 
