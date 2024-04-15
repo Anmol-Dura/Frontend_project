@@ -49,61 +49,68 @@
       </nav>
     </header>
     <main>
-      <form id="bookingForm">
-        <div class="mobile-only">
-          <label for="firstName">Name:</label>
-          <input type="text" id="Name" name="Name" required />
-        </div>
-        <div class="desktop-only">
-          <label for="firstName">First Name:</label>
-          <input type="text" id="firstName" name="firstName" required />
-        </div>
-        <div class="desktop-only">
-          <label for="lastName">Last Name:</label>
-          <input type="text" id="lastName" name="lastName" required />
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div>
-          <label for="checkinDate">Check-in Date:</label>
-          <input type="date" id="checkinDate" name="checkinDate" required />
-        </div>
-        <div>
-          <label for="checkoutDate">Check-out Date:</label>
-          <input type="date" id="checkoutDate" name="checkoutDate" required />
-        </div>
-        <div class="service-types-section">
-          <label>Type of Service:</label><br />
-          <div class="service-type">
-            <label for="specialService">Special</label>
-            <input
-              type="radio"
-              id="specialService"
-              name="serviceType"
-              value="special"
-            />
+      <div class="booking-section">
+        <form id="bookingForm">
+          <div class="mobile-only">
+            <label for="firstName">Name:</label>
+            <input type="text" id="Name" name="Name" required />
           </div>
-          <div class="service-type">
-            <label for="normalService">Normal</label>
-            <input
-              type="radio"
-              id="normalService"
-              name="serviceType"
-              value="normal"
-            />
+          <div class="desktop-only">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required />
           </div>
-        </div>
-        <div>
-          <label for="comments">Comments:</label><br />
-          <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
-        </div>
-        <div class="buttons-section">
-          <button type="reset">Reset</button>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+          <div class="desktop-only">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="checkinDate">Check-in Date:</label>
+            <input type="date" id="checkinDate" name="checkinDate" required />
+          </div>
+          <div>
+            <label for="checkoutDate">Check-out Date:</label>
+            <input type="date" id="checkoutDate" name="checkoutDate" required />
+          </div>
+          <div class="service-types-section">
+            <label>Type of Service:</label><br />
+            <div class="service-type">
+              <label for="specialService">Special</label>
+              <input
+                type="radio"
+                id="specialService"
+                name="serviceType"
+                value="special"
+              />
+            </div>
+            <div class="service-type">
+              <label for="normalService">Normal</label>
+              <input
+                type="radio"
+                id="normalService"
+                name="serviceType"
+                value="normal"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="comments">Comments:</label><br />
+            <textarea
+              id="comments"
+              name="comments"
+              rows="4"
+              cols="50"
+            ></textarea>
+          </div>
+          <div class="buttons-section">
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </main>
 
     <!-- Booking For with Validation -->
