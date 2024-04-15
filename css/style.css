@@ -385,6 +385,7 @@ span a {
 
 }
 
+
 /* Log in Page Mobile Desing*/
 /* Styling Sing up and Create Account forms*/
 
@@ -566,52 +567,19 @@ input {
 
 
  
-/* Estilos mobile */
+/* Styling for the destination page */
+
+/*mobile styles*/ 
 @media only screen and (max-width: 600px) {
-    .destination-description.desktop {
-        display: none; /* Oculta la versión completa en dispositivos móviles */
-    }
 
-    .destination-description.mobile {
-        display: block; /* Muestra la versión resumida en dispositivos móviles */
-    }
-
-    /* Muestra solo el primer párrafo en la versión resumida */
-    .destination-description.mobile p:not(:first-child) {
-        display: none;
-    }
-
-    /* Oculta la imagen en la versión resumida */
-    .destination-description.mobile img {
-        display: none;
-    }
-
-    /* Oculta el enlace 'Read more' en la versión resumida */
-    .destination-description.mobile .read-more {
-        display: none;
-    }
-}
-
-
-/* Estilos dektop */
-@media only screen and (min-width: 601px) {
-    .destination-description.mobile {
-        display: none; /* Oculta la versión resumida en dispositivos de escritorio */
-    }
-
-    .destination-description.desktop {
-        display: block; /* Muestra la versión completa en dispositivos de escritorio */
-    }
-
-    /* Oculta el enlace 'Read more' en la versión de escritorio */
-    .destination-description.desktop .read-more {
-        display: none;
-    }
-}
-
-
-@media only screen and (max-width: 600px) {
+    .destination-description .full-description {
+          display: none;
+        }
+        .destination-description .mobile-description {
+          display: block;
+        }
     
+
     main h1 {
         color: #fff;
         background: rgba(0, 0, 0, 0.5);
@@ -719,6 +687,13 @@ input {
 /* Estilos dektop */
 @media only screen and (min-width: 1025px) {
     
+    .destination-description .mobile-description {
+        display: none;
+      }
+      .destination-description .full-description {
+        display: block;
+      }
+
     main h1 {
         color: #fff;
         background: rgba(0, 0, 0, 0.5);
@@ -769,6 +744,43 @@ input {
         background-size: cover;
     }
 }
+/*js features*/
+/* Modal styles */
+.modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.modal-content {
+    background-color: white !important;
+    padding: 20px !important;
+    border-radius: 5px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+.close {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    font-size: 20px !important;
+    cursor: pointer !important;
+}
+
+/* CSS for dark mode */
+.dark-mode .destination-container {
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+}
+
+
+
 
 
 
@@ -787,7 +799,7 @@ input {
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px auto;
-    padding: 20px; /* Added padding */
+    padding: 20px;
     max-width: 800px;
     box-sizing: border-box;
 }
@@ -809,8 +821,8 @@ input {
     box-sizing: border-box;
     border-radius: 10px;
     background-color: #f2f2f2;
-    padding: 20px; /* Added padding */
-    margin-bottom: 20px; /* Added margin-bottom */
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
 .contact-details p {
@@ -902,7 +914,7 @@ input {
 @media only screen and (max-width: 600px) {
     .contact-info {
         flex-direction: column;
-        padding: 10px; /* Adjusted padding */
+        padding: 10px;
     }
 
     .contact-details, .map {
@@ -920,7 +932,7 @@ input {
 
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
     .contact-form, .contact-info {
-        padding: 20px; /* Adjusted padding */
+        padding: 20px;
     }
 
     .contact-form h2, .contact-info h2 {
@@ -930,7 +942,7 @@ input {
 
 @media only screen and (min-width: 1025px) {
     .contact-form, .contact-info {
-        padding: 20px; /* Adjusted padding */
+        padding: 20px;
     }
 
     .contact-form h2, .contact-info h2 {
@@ -938,3 +950,44 @@ input {
     }
 }
 
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode .contact-info,
+.dark-mode .contact-form {
+    background-color: #444;
+    color: #fff;
+}
+
+.dark-mode .contact-details,
+.dark-mode .map {
+    background-color: #333;
+}
+
+.dark-mode .contact-details p {
+    color: #fff;
+}
+
+.dark-mode .contact-details a {
+    color: #08f;
+}
+
+.dark-mode .contact-details a:hover {
+    text-decoration: underline;
+}
+
+.dark-mode .contact-form button[type="submit"] {
+    background-color: #08f;
+}
+/* Light Mode Background Image */
+.light-mode-background {
+    background-image: url("../media/images/banff.jpg");
+}
+
+/* Dark Mode Background Image */
+.dark-mode-background {
+    background-image: url("../media/images/toronto.jpg");
+}
