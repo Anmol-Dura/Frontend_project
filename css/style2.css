@@ -1,0 +1,906 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* border: 2px solid red; */
+}
+
+body {
+  overflow: scroll;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Designing for the navbar */
+.logo img {
+  float: left;
+  max-width: 4.5rem;
+  margin-left: 1rem;
+}
+
+/* designing for the hamburger-menu */
+:root {
+  --bar-width: 65px;
+  --bar-height: 10px;
+  --hamburger-gap: 6px;
+  --foreground: #333;
+  --background: white;
+  --hamburger-margins: 8px;
+  --size-3: 3rem;
+  --animation-timing: 200ms ease-in-out;
+  /* uses the tignometry to find the hipotinious*/
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+  --hamburger-top-margin: 18px;
+  /* --logo-color: rgb(165 29 35); */
+  --logo-color: var(--foreground);
+}
+
+.hamburger-menu {
+  /* finding the width of the x */
+  --x-width: calc(var(--hamburger-height) * 1.4142135623730950488);
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+  position: absolute;
+  right: var(--hamburger-margins);
+  top: var(--hamburger-top-margin);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: " ";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--foreground);
+  transform-origin: left center;
+  border-radius: 9999px;
+  transition: opacity var(--animation-timing), width var(--animation-timing),
+    rotate var(--animation-timing), translate var(--animation-timing),
+    color var(--animation-timing);
+}
+
+.hamburger-menu input {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+/* Designing the side bar */
+nav.sidebar {
+  display: block;
+  position: absolute;
+  /* make it at the center */
+  left: 150%;
+  top: 15%;
+  transform: translateX(-50%);
+  margin: 0 auto 0rem;
+  width: 95%;
+  min-width: 300px;
+  /* Here, the alpha value is 0.5 (50% opacity) */
+  background-color: rgba(255, 255, 255, 0.5);
+  /* background-color: #dc3545; */
+
+  /* background-color: var(--foreground); */
+  /*for making the background transparent */
+
+  /* background-color:var(--foreground); */
+  clear: left;
+  /* padding-top: calc(var(--hamburger-top-margin) + var(--hamburger-height) + 1rem); */
+  max-height: 115vh;
+  z-index: 0;
+  border-radius: 3rem 3rem 3rem 3rem;
+
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out; /* WebKit */
+  -moz-transition: all 0.5s ease-in-out; /* Mozilla */
+  -o-transition: all 0.5s ease-in-out; /* Opera */
+
+  text-align: center;
+  padding: 2rem;
+  /* box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); */
+  /* overflow: auto; */
+  /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+}
+
+.sidebar a {
+  margin: 3rem auto 3rem auto;
+  display: block;
+  min-width: 200px;
+  padding: 1rem;
+  border: 2px solid var(--background);
+  /* border: transparent; */
+  border-radius: 1rem;
+  /* pointer-events: none; */
+  text-decoration: none;
+  /* font-size: 1.4rem; */
+  font-size: clamp(16px, 5vw, 24px);
+  /* The clamp function is used to make the object it is applied responsive without the use of any mediaqueries  */
+  color: var(--background);
+  box-shadow: none;
+  z-index: 1;
+  /* transition: all 1s ease-in-out; */
+  box-shadow: 0px 0px 8px var(--background);
+}
+
+.hamburger-menu:has(input:checked) ~ nav div .desktop-only {
+  display: none;
+}
+
+/* nav div .desktop-only{
+    display: none;
+
+} */
+
+.hamburger-menu:has(input:checked) ~ .sidebar a {
+  display: block;
+  border: 2px solid var(--background);
+}
+
+.hamburger-menu:has(input:checked) ~ nav.sidebar {
+  display: block;
+  width: 95%;
+  max-height: 115vh;
+  left: 50%;
+  padding: 0rem 0rem 3rem 0rem;
+  opacity: 0.96;
+  background-color: var(--foreground);
+  padding: 2rem;
+  z-index: 100;
+  /* color: var(--foreground); */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+}
+
+.hamburger-menu:has(input:checked) ~ .sidebar a {
+  color: var(--background);
+  width: inherit;
+}
+
+/* designing for the main section */
+main * {
+  /* border: 2px solid var(--foreground); */
+}
+
+.main-content {
+  /* margin-top: 5rem; */
+  clear: both;
+}
+
+/* Designing for the banner */
+.hero-section * {
+  /* for creating border in the  */
+  /* border: 2px solid var(--foreground); */
+  /* Adjust the last value (alpha) to control opacity */
+}
+
+.hero-section {
+  clear: both;
+  width: 100%;
+  height: 300px;
+  background-image: url("../media/images/hero-image-1.jpeg");
+  background-position: center center;
+  background-size: cover;
+  /* opacity: 0.9; */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black background */
+  /* or contain, auto, etc. */
+  background-repeat: no-repeat;
+  /* or repeat, repeat-x, repeat-y */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.hero-content {
+  text-align: center;
+  color: snow;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content h1 {
+  /* margin-top: 5rem; */
+  /* font-size: 2rem; */
+  color: snow;
+  font-size: clamp(1.5rem, 7vw, 2.5rem);
+  margin-bottom: 2rem;
+}
+
+.btn {
+  margin-top: 10px;
+  text-decoration: none;
+  color: snow;
+  padding: 15px 1rem;
+  border: 2px solid ghostwhite;
+  border-radius: 5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+/* button for the review section */
+.btn-review {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 4rem;
+  font-size: 1rem;
+}
+
+.content-heading {
+  font-size: 1.5rem;
+  color: var(--background);
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  /* border-radius: 1rem; */
+  /* border: 2px solid var(--foreground); */
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-image: url("../media/images/canada-3.jpeg");
+  background-position: center top;
+  background-size: cover;
+  width: 100%;
+  margin: 1rem auto;
+  transition: all 0.5s ease-in-out;
+  /* font-size: clamp(1.5rem, 6vw, 2.5rem); */
+  /* font-size: clamp(1.5rem, 5vw, 2.4rem); */
+}
+
+.testimonial-section .content-heading {
+  background-image: url("../media/images/canada-4.jpeg");
+  background-position: center center;
+}
+
+/* designing for the our services section */
+.services-section {
+  padding: 1rem;
+}
+
+.scrolling-container {
+  display: grid;
+  gap: 15px;
+  grid-auto-flow: row;
+  /* grid-auto-columns: 100%; */
+  grid-template-rows: repeat(6, 1fr);
+  overflow-y: auto;
+  scrollbar-color:var(--foreground) ;
+  scrollbar-width: 0px;
+  overscroll-behavior-inline: contain;
+  height: 80vh;
+  padding: 1rem;
+}
+
+.service {
+  min-width: 300px;
+  max-width: 90%;
+  width: 100%;
+  flex: 1 1 auto;
+  height: 300px;
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  background-position: center center;
+  background-size: cover;
+  aspect-ratio: 16/9;
+  color: white;
+  margin: 0 auto;
+}
+
+.service-1 {
+  background-image: url("../media/images/BookYourFlight.jepg.jpeg");
+}
+
+.service-2 {
+  background-image: url("../media/images/luxurious_hotel.jpeg");
+}
+
+.service-3 {
+  background-image: url("../media/images/carRentals.jpeg");
+  background-position: center bottom;
+  color: white;
+}
+
+.service-4 {
+  background-image: url("../media/images/DiningRecomendations.jpeg");
+}
+
+.service-5 {
+  background-image: url("../media/images/guidedTours.jpeg");
+}
+
+.service-6 {
+  background-image: url("../media/images/SpecialOccasionPackages.jpeg");
+}
+
+.testimonial-section {
+  background-color: var(--background);
+  text-align: center;
+}
+
+/* Testimonial section for mobile design  */
+.testimonial-section {
+  background-color: var(--background);
+  color: var(--foreground);
+  text-align: center;
+  padding: 1rem;
+}
+
+/* designing for the review section */
+
+/* Designig for the form */
+.review-section {
+  max-width: 100%;
+  width: 200px;
+  min-width: 300px;
+  margin: 1rem auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 12px 12px 2px 1px #ccc;
+  border: 1px solid #ccc;
+}
+
+.review-section input[type="text"],
+.review-section textarea {
+  max-width: 100%;
+  min-width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.review-section textarea {
+  height: 100px;
+}
+
+.btn-review {
+  background-color: #4caf50;
+  color: white;
+  padding: 15px 25px;
+  border: none;
+  border-radius: 3rem;
+  max-width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Designing for the ratig section */
+.checked {
+  color: rgb(255, 189, 9);
+}
+
+.unchecked {
+  color: rgb(17, 13, 13);
+}
+
+/* designing for footer... */
+footer {
+  background-color: var(--foreground);
+  z-index: 200;
+  margin-top: 5rem;
+}
+
+.footer-container {
+  width: 100%;
+  padding: 30px 30px 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons a {
+  text-decoration: none;
+  padding: 10px;
+  margin: 10px;
+  background-color: var(--background);
+  border-radius: 50%;
+}
+
+.social-icons a i {
+  font-size: 1.5rem;
+  /* font-size: clamp(1em, 6vw, 2.4em); */
+  color: var(--logo-color);
+  opacity: 1;
+}
+
+/* footer nav portion */
+.footer-nav {
+  margin: 20px 0;
+  font-size: 2.5rem;
+  /* font-size: clamp(16px, 2vw, 24px); */
+  /* font-size: clamp(16px, 5vw, 24px); */
+}
+
+.footer-nav ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav ul li {
+  margin: 5px auto;
+  width: 100%;
+  list-style-type: none;
+  padding: 0.5rem;
+}
+
+.footer-nav ul li a {
+  color: var(--background);
+  margin: 20px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  opacity: 0.6;
+  transition: 0.5s;
+}
+
+
+
+
+
+.footer-bottom {
+  color: va(--background);
+  padding: 20px;
+  text-align: center;
+}
+
+span {
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  margin: 0px 5px;
+}
+
+span a {
+  text-decoration: none;
+  color: var(--background);
+}
+
+/* ////////////////////////////////Booking page/////////////////////////////////////////// */
+main .booking-section{
+    width: 100%;
+    max-width: 100%;
+    background-image: url("../media/images/canada.jpeg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1rem;
+    height: 100vh;
+}
+form {
+  max-width: 600px;
+  width: 100%;
+  margin: 5rem auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  clear: both;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="reset"] {
+  background-color: #dc3545;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+}
+button[type="reset"]:hover,
+button[type="submit"]:hover {
+  filter: brightness(90%);
+}
+.buttons-section {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.service-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.service-types-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.mobile-only {
+  display: block; /* Show mobile-only elements by default */
+}
+
+.desktop-only {
+  display: none; /* Hide desktop-only elements by default */
+}
+/* Media query for tablet view */
+@media only screen and (min-width: 768px) {
+  .hamburger-menu,
+  .hamburger-menu::after,
+  .hamburger-menu::before {
+    display: none;
+    pointer-events: none;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+    /* border: 2px solid var(--background); */
+  }
+
+  .logo img {
+    max-width: 6rem;
+  }
+
+  .hamburger-menu:has(input:checked) ~ nav.sidebar {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* background-color: var(--background); */
+    box-shadow: none;
+    /* background-color: white; */
+    max-height: 0px;
+    align-items: center;
+    padding: 0;
+    max-width: 100%;
+    margin: 0rem auto;
+    background-color: var(--foreground);
+    border-radius: 0;
+  }
+
+  nav.sidebar {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0;
+    max-width: 100%;
+    margin: 0rem auto;
+    /* background-color: var(--background); */
+    border-radius: 0;
+    /* background-color: yellowgreen; */
+    /* margin-top: 20rem; */
+    /* border: 2px solid red; */
+  }
+
+  nav.sidebar {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-section {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .sidebar a {
+    display: inline-block;
+    margin: 0 10px;
+    /* font-size: .65rem; @i need a clamp function to have the value from 0.8rem -0.7rem */
+    font-size: clamp(0.8rem, 1vh, 1.5rem);
+    /* font-size: 2rem; */
+    min-width: auto;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: var(--background);
+    border: 2px solid var(--foreground);
+    background-color: var(--foreground);
+  }
+
+  .hamburger-menu:has(input:checked) ~ nav.sidebar a {
+    border: none;
+  }
+
+  /* designing the tablet section of the scrolling-container  */
+
+  .scrolling-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid: 1rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: none;
+    padding-top: 1rem;
+    height: 45vh;
+  }
+
+  .service {
+    height: 300px;
+    width: 400px;
+    min-width: 400px;
+    background-color: var(--background);
+    border-radius: 1rem;
+    /* border: 2px solid purple; */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+    padding: 1rem;
+    font-size: 1.2rem;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    object-fit: cover;
+  }
+
+  .service-6 {
+    font-size: 1.1rem;
+  }
+
+  /* we have the before pseudo-element that has position absolute to the relative element service  */
+
+  .service::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #333;
+    border-radius: inherit;
+    opacity: 0.5;
+    z-index: -1;
+  }
+
+  /* lift the box by a little bit when it is hovered */
+  .service:hover {
+    transform: translateY(-10px);
+  }
+
+  /* The review-section */
+  .review-section {
+    width: 600px;
+    min-width: 500px;
+  }
+
+  .review-section span {
+    cursor: pointer;
+  }
+
+  .btn-review {
+    max-width: fit-content;
+    margin: 1rem auto;
+  }
+
+  /* footer */
+  .social-icons a {
+    text-decoration: none;
+    padding: 1rem;
+    margin: 10px;
+    background-color: var(--background);
+    border-radius: 50%;
+  }
+
+  .social-icons a i {
+    font-size: 2rem;
+    color: var(--logo-color);
+    opacity: 0.9;
+  }
+
+  .footer-nav ul li a {
+    font-size: 1.1rem;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+
+  /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+}
+
+/* ////////////////////////////////Media query for desktop view/////////////////////////////////////////// */
+@media only screen and (min-width: 1024px) {
+  /* Add your desktop-specific CSS here */
+  header {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    background-color: var(--background);
+    gap: 0px;
+    padding: 0 1.5rem;
+    margin-top: 0px;
+  }
+
+  nav.sidebar {
+    margin-bottom: 0rem;
+  }
+
+  .sidebar a {
+    font-size: 1rem;
+  }
+
+  .logo img {
+    max-width: 6rem;
+  }
+
+  /* css on hero section */
+  .hero-section {
+    height: 690px;
+    padding-top: 3rem;
+  }
+  .hero-content {
+    padding: 6rem;
+  }
+  .hero-content h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 3rem;
+  }
+
+  /* hover effect on hero section when we hover */
+  .hero-content a:hover {
+    /* background-color: ; */
+    border-radius: 5px;
+    padding: 15px 2rem;
+  }
+
+  .content-heading {
+    opacity: 0.85;
+  }
+
+  .content-heading:hover {
+    opacity: 1;
+  }
+
+  /* designing the scrolling container */
+  .scrolling-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid: 1rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+    /* grid-auto-columns: 35%; */
+    grid-template-columns: repeat(6, 1fr);
+    padding-top: 1rem;
+  }
+
+  /* Only applicable on the desktop view of the website */
+
+  .btn-review:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+  }
+
+  .social-icons a:hover {
+    background-color: var(--logo-color);
+    transition: 0.5s;
+  }
+
+  .sidebar a:hover {
+    box-shadow: 5px 5px 10px var(--foreground);
+    transition: 0.2s;
+  }
+
+  .footer-nav ul li a {
+    font-size: 1.3rem;
+  }
+
+  .footer-nav ul {
+    flex-direction: row;
+  }
+  .social-icons a:hover i {
+    color:#007bff;
+    transition: 0.5s;
+  }
+  .footer-container ul li a:hover {
+    opacity: 1;
+  }
+  .designer:hover {
+    opacity: 1;
+  }
+
+  /* ////////////////////////////////for the booking form //////////////////////////// */
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* ////////////////////////////////Media query for mobile view/////////////////////////////////////////// */
+@media screen and (min-width: 600px) {
+  .mobile-only {
+    display: none; /* Hide mobile-only elements in desktop view */
+  }
+
+  .desktop-only {
+    display: block; /* Show desktop-only elements in desktop view */
+  }
+
+  form {
+    padding: 10px;
+  }
+}
