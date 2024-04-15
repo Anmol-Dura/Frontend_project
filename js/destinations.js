@@ -1,27 +1,37 @@
-// Función para recortar el texto y agregar un botón de "mostrar más"
-function recortarTexto() {
-    var descriptions = document.querySelectorAll('.destination-description p');
-    descriptions.forEach(function(description) {
-        var contenido = description.innerHTML;
-        var palabras = contenido.split(' ');
-        var maxPalabras = 30; // Número máximo de palabras a mostrar inicialmente
+document.addEventListener("DOMContentLoaded", function() {
+    // Agregar event listeners para la visualización de imágenes en modal
+    const images = document.querySelectorAll('.destination-description img');
+    images.forEach(image => {
+        image.addEventListener('click', function() {
+            const modal = document.createElement('div');
+            modal.classList.add('modal');
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <img src="${this.src}" alt="${this.alt}">
+                </div>
+            `;
+            document.body.appendChild(modal);
 
-        if (window.innerWidth < 768) { // Si la pantalla es de tamaño móvil
-            var textoRecortado = palabras.slice(0, maxPalabras).join(' ');
-            description.innerHTML = textoRecortado + '... <button class="toggleBtn" onclick="toggleDescripcion(this)">Mostrar más</button>';
+            modal.addEventListener('click', function() {
+                modal.remove();
+            });
+        });
+    });
+
+    const toggleButton = document.getElementById('toggleDarkMode');
+    const destinationsContainer = document.querySelector('.destinations');
+
+    toggleButton.addEventListener('click', function() {
+        destinationsContainer.classList.toggle('dark-mode');
+
+        // Update background image based on dark mode state
+        const body = document.body;
+        const torontoImage = document.querySelector('.destination-description img[src="../media/images/toronto.jpg"]');
+
+        if (destinationsContainer.classList.contains('dark-mode')) {
+            body.style.backgroundImage = `url('${torontoImage.src}')`; // Change body background to Toronto image
+        } else {
+            body.style.backgroundImage = 'url("../media/images/banff.jpg")'; // Revert to default Banff background when in light mode
         }
     });
-}
-
-// Función para mostrar más texto
-function toggleDescripcion(btn) {
-    var descripcion = btn.parentNode;
-    var contenidoCompleto = descripcion.getAttribute('data-fulltext');
-    descripcion.innerHTML = contenidoCompleto + ' <button class="toggleBtn" onclick="toggleDescripcion(this)">Mostrar menos</button>';
-}
-
-// Llamar a la función para recortar texto cuando la página se carga
-window.onload = recortarTexto;
-
-// Llamar a la función para recortar texto cuando la ventana se redimensiona
-window.onresize = recortarTexto;
+});
