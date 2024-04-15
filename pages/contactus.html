@@ -9,23 +9,24 @@
     <link rel="icon" href="../media/images/MicrosoftTeams-image.png" type="image/x-icon">
 </head>
 
-<body>
+<body class="destinations-body light-mode">
     <header>
         <div class="logo">
-            <a href="../index.html"><img src="../media/images/logo-01.png" alt="a logo"></a> 
+            <a href="../index.html"><img src="../media/images/logo-01.png" alt="a logo"></a>
         </div>
         <label class="hamburger-menu">
             <input type="checkbox">
         </label>
         <nav class="sidebar">
-            <div><a href="../index.html">Home</a></div> 
-            <div><a href="aboutus.html">About<span>Us</span></a></div> 
-            <div><a href="contactus.html">Contact<span>Us</span></a></div> 
+            <div><a href="../index.html">Home</a></div>
+            <div><a href="aboutus.html">About<span>Us</span></a></div>
+            <div><a href="contactus.html">Contact<span>Us</span></a></div>
             <div><a href="destinations.html">Destinations</a></div>
             <div><a href="login.html">Login</a></div>
         </nav>
     </header>
     <main>
+        <button id="toggleDarkMode">Toggle Dark Mode</button>
         <section class="contact-info">
             <div class="contact-info">
                 <div class="contact-details">
@@ -38,7 +39,8 @@
                 </div>
                 <div class="map">
                     <h2>Location</h2>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.9555730902143!2d-79.33804628775485!3d43.773781044502314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d2f61eed115b%3A0xdd036b4cf11ff672!2s271%20Yorkland%20Blvd%2C%20North%20York%2C%20ON%20M2J%201S5!5e0!3m2!1ses-419!2sca!4v1711849153055!5m2!1ses-419!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.9555730902143!2d-79.33804628775485!3d43.773781044502314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d2f61eed115b%3A0xdd036b4cf11ff672!2s271%20Yorkland%20Blvd%2C%20North%20York%2C%20ON%20M2J%201S5!5e0!3m2!1ses-419!2sca!4v1711849153055!5m2!1ses-419!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
             </div>
         </section>
         <section class="contact-form">
@@ -71,12 +73,12 @@
             </div>
             <div class="footer-nav">
                 <ul>
-                    <li><a href="../index.html">Home</a></li> 
+                    <li><a href="../index.html">Home</a></li>
                     <li><a href="aboutus.html">About<span class="footer-span">Us</span></a></li>
                     <li><a href="contactus.html">Contact<span class="footer-span">Us</span></a></li>
                     <li><a href="destinations.html">Destinations</a></li>
                     <li><a href="login.html">Login</a></li>
-                    <li><a href="packages.html">Packages</a></li> 
+                    <li><a href="packages.html">Packages</a></li>
                 </ul>
             </div>
         </div>
@@ -85,6 +87,7 @@
             </p>
         </div>
     </footer>
+    <script src="../js/contact.js"></script>
 </body>
 
 </html>
