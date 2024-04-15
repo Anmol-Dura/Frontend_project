@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 *,
 *::before,
 *::after {
@@ -163,7 +164,7 @@ nav.sidebar {
 .hamburger-menu:has(input:checked) ~ nav.sidebar {
   display: block;
   width: 95%;
-  max-height: 100vh;
+  max-height: 115vh;
   padding: 0rem 0rem 3rem 0rem;
   opacity: 0.96;
   background-color: var(--foreground);
@@ -204,7 +205,8 @@ main * {
   background-position: center center;
   background-size: cover;
   /* opacity: 0.9; */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black background */
   /* or contain, auto, etc. */
   background-repeat: no-repeat;
   /* or repeat, repeat-x, repeat-y */
@@ -240,6 +242,7 @@ main * {
   border-radius: 5rem;
   transition: all 0.5s ease-in-out;
 }
+
 /* button for the review section */
 .btn-review {
   margin: 1rem;
@@ -277,6 +280,7 @@ main * {
 .services-section {
   padding: 1rem;
 }
+
 .scrolling-container {
   display: grid;
   gap: 15px;
@@ -311,23 +315,29 @@ main * {
 .service-1 {
   background-image: url("../media/images/BookYourFlight.jepg.jpeg");
 }
+
 .service-2 {
   background-image: url("../media/images/luxurious_hotel.jpeg");
 }
+
 .service-3 {
   background-image: url("../media/images/carRentals.jpeg");
   background-position: center bottom;
   color: white;
 }
+
 .service-4 {
   background-image: url("../media/images/DiningRecomendations.jpeg");
 }
+
 .service-5 {
   background-image: url("../media/images/guidedTours.jpeg");
 }
+
 .service-6 {
   background-image: url("../media/images/SpecialOccasionPackages.jpeg");
 }
+
 .testimonial-section {
   background-color: var(--background);
   text-align: center;
@@ -388,6 +398,7 @@ main * {
 .checked {
   color: rgb(255, 189, 9);
 }
+
 .unchecked {
   color: rgb(17, 13, 13);
 }
@@ -489,6 +500,94 @@ span a {
   color: var(--background);
 }
 
+/* ////////////////////////////////Booking page/////////////////////////////////////////// */
+form {
+  max-width: 600px;
+  width: 100%;
+  margin: 5rem auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  clear: both;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+textarea {
+  height: 100px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="reset"] {
+  background-color: #dc3545;
+}
+
+button[type="submit"] {
+  background-color: #28a745;
+}
+button[type="reset"]:hover,
+button[type="submit"]:hover {
+  filter: brightness(90%);
+}
+.buttons-section {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.service-type {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.service-types-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.mobile-only {
+  display: block; /* Show mobile-only elements by default */
+}
+
+.desktop-only {
+  display: none; /* Hide desktop-only elements by default */
+}
 /* Media query for tablet view */
 @media only screen and (min-width: 768px) {
   .hamburger-menu,
@@ -554,8 +653,10 @@ span a {
   }
 
   .hero-section {
-    margin-top: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
   }
+
   .sidebar a {
     display: inline-block;
     margin: 0 10px;
@@ -604,9 +705,11 @@ span a {
     transition: all 0.2s ease-in-out;
     object-fit: cover;
   }
+
   .service-6 {
     font-size: 1.1rem;
   }
+
   /* we have the before pseudo-element that has position absolute to the relative element service  */
 
   .service::before {
@@ -634,13 +737,14 @@ span a {
     width: 600px;
     min-width: 500px;
   }
-  .review-section span{
+
+  .review-section span {
     cursor: pointer;
   }
-  .btn-review{
+
+  .btn-review {
     max-width: fit-content;
     margin: 1rem auto;
-    
   }
 
   /* footer */
@@ -666,10 +770,14 @@ span a {
     display: none;
   }
 
+  .desktop-only {
+    display: block;
+  }
+
   /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
 }
 
-/* Media query for desktop view */
+/* ////////////////////////////////Media query for desktop view/////////////////////////////////////////// */
 @media only screen and (min-width: 1024px) {
   /* Add your desktop-specific CSS here */
   header {
@@ -699,7 +807,9 @@ span a {
     height: 690px;
     padding-top: 3rem;
   }
-
+  .hero-content{
+    padding: 6rem;
+  }
   .hero-content h1 {
     font-size: clamp(2rem, 6vw, 3rem);
     margin-bottom: 3rem;
@@ -711,12 +821,15 @@ span a {
     border-radius: 5px;
     padding: 15px 2rem;
   }
+
   .content-heading {
     opacity: 0.85;
   }
+
   .content-heading:hover {
     opacity: 1;
   }
+
   /* designing the scrolling container */
   .scrolling-container {
     display: grid;
@@ -735,6 +848,7 @@ span a {
     background-color: #45a049;
     transform: scale(1.1);
   }
+
   .social-icons a:hover {
     background-color: var(--logo-color);
     transition: 0.5s;
@@ -751,5 +865,28 @@ span a {
 
   .footer-nav ul {
     flex-direction: row;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: block;
+  }
+}
+
+/* ////////////////////////////////Media query for mobile view/////////////////////////////////////////// */
+@media screen and (min-width: 600px) {
+  .mobile-only {
+    display: none; /* Hide mobile-only elements in desktop view */
+  }
+
+  .desktop-only {
+    display: block; /* Show desktop-only elements in desktop view */
+  }
+
+  form {
+    padding: 10px;
   }
 }
