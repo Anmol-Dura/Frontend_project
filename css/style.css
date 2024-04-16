@@ -501,14 +501,41 @@ span a {
 }
 
 /* ////////////////////////////////Booking page/////////////////////////////////////////// */
-form {
+
+.booking-section {
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.background-image-booking {
+  background-image: url("../media/images/canada.jpeg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+#bookingForm {
   max-width: 600px;
   width: 100%;
+  position: relative;
   margin: 5rem auto;
-  padding: 20px;
+  z-index: 2;
+  padding: 2rem;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   clear: both;
 }
 
@@ -522,11 +549,13 @@ label {
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="date"],
-textarea {
+#bookingForm input[type="text"],
+#bookingForm input[type="email"],
+#bookingForm input[type="date"],
+#bookingForm input[type="number"],
+#bookingForm textarea {
   width: 100%;
+  max-width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -534,15 +563,15 @@ textarea {
   font-size: 16px;
 }
 
-textarea {
+#bookingForm textarea {
   height: 100px;
 }
 
-input[type="radio"] {
+#bookingForm input[type="radio"] {
   margin-right: 10px;
 }
 
-button {
+#bookingForm button {
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
@@ -552,42 +581,62 @@ button {
   font-size: 16px;
 }
 
-button[type="reset"] {
+#bookingForm button[type="reset"] {
   background-color: #dc3545;
 }
 
-button[type="submit"] {
-  background-color: #28a745;
+#bookingForm button[type="submit"] {
+  background-color: #007bff;
 }
-button[type="reset"]:hover,
-button[type="submit"]:hover {
+#bookingForm button[type="reset"]:hover,
+#bookingForm button[type="submit"]:hover {
   filter: brightness(90%);
 }
-.buttons-section {
+#bookingForm .buttons-section {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 2rem;
 }
-.service-type {
+#bookingForm .service-type {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-.service-types-section {
+#bookingForm .service-types-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   gap: 10px;
 }
-.mobile-only {
+#bookingForm .mobile-only {
   display: block; /* Show mobile-only elements by default */
 }
 
-.desktop-only {
+#bookingForm .desktop-only {
   display: none; /* Hide desktop-only elements by default */
 }
+
+#bookingForm .service-type {
+  /* border: 2px solid var(--foreground); */
+}
+#bookingForm .service-type label {
+  width: 100%;
+  display: block;
+  border: 2px solid var(--foreground);
+  background-color: var(--background);
+  padding: 10px;
+  border-radius: 1rem;
+  text-align: center;
+  color: var(--foreground);
+  cursor: pointer;
+}
+#bookingForm .service-type input[type="radio"] {
+  display: none;
+  /* visibility: hidden; */
+}
+
 /* Media query for tablet view */
 @media only screen and (min-width: 768px) {
   .hamburger-menu,
@@ -766,12 +815,18 @@ button[type="submit"]:hover {
     font-size: 1.1rem;
   }
 
-  .mobile-only {
+  #bookingForm .mobile-only {
     display: none;
   }
 
-  .desktop-only {
+  #bookingForm .desktop-only {
     display: block;
+  }
+  #bookingForm .service-types-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
   }
 
   /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
@@ -807,7 +862,7 @@ button[type="submit"]:hover {
     height: 690px;
     padding-top: 3rem;
   }
-  .hero-content{
+  .hero-content {
     padding: 6rem;
   }
   .hero-content h1 {
@@ -865,28 +920,5 @@ button[type="submit"]:hover {
 
   .footer-nav ul {
     flex-direction: row;
-  }
-
-  .mobile-only {
-    display: none;
-  }
-
-  .desktop-only {
-    display: block;
-  }
-}
-
-/* ////////////////////////////////Media query for mobile view/////////////////////////////////////////// */
-@media screen and (min-width: 600px) {
-  .mobile-only {
-    display: none; /* Hide mobile-only elements in desktop view */
-  }
-
-  .desktop-only {
-    display: block; /* Show desktop-only elements in desktop view */
-  }
-
-  form {
-    padding: 10px;
   }
 }
