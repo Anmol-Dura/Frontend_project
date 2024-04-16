@@ -1,61 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/java.js" defer></script>
-    <script src="https://kit.fontawesome.com/c5017c04fb.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="./media/images/MicrosoftTeams-image.png" type="image/x-icon"> <!--for fav-icon-->
-</head>
+    <script
+      src="https://kit.fontawesome.com/c5017c04fb.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="icon"
+      href="./media/images/MicrosoftTeams-image.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      * {
+        /*border: 2px solid red;*/
+      }
+    </style>
+    <!--for fav-icon-->
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="logo">
-            <a href="./index.html"><img src="./media/images/logo-01.png" alt="a logo"></a>
+      <div class="logo">
+        <a href="./index.html"
+          ><img src="./media/images/logo-01.png" alt="a logo"
+        /></a>
+      </div>
+      <label class="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <nav class="sidebar">
+        <div>
+          <a href="./pages/aboutus.html">About<span>Us</span></a>
         </div>
-        <label class="hamburger-menu">
-            <input type="checkbox">
-        </label>
-        <nav class="sidebar">
-            <div><a href="./index.html">Home</a></div>
-            <div><a href="./pages/aboutus.html">About<span>Us</span></a></div>
-            <div><a href="./pages/contactus.html">Contact<span>Us</span></a></div>
-            <div><a href="./pages/destinations.html">Destinations</a></div>
-            <div><a href="./pages/login.html">Login</a></div>
-        </nav>
+        <div>
+          <a href="./pages/contactus.html">Contact<span>Us</span></a>
+        </div>
+        <div><a href="./pages/destinations.html">Destinations</a></div>
+        <div><a href="./pages/login.html">Login</a></div>
+        <div>
+          <a href="./pages/packages.html" class="desktop-only">Packages</a>
+        </div>
+      </nav>
     </header>
     <main>
+      <div class="main-content">
+        <section class="hero-section">
+          <div class="hero-content">
+            <h1>Let's Travel</h1>
+            <p>Explore the world with us</p>
+            <a href="./pages/destinations.html" class="btn"
+              >View Destinations</a
+            >
+          </div>
+        </section>
 
+        <section class="services-section">
+          <h2 class="content-heading">Our Services</h2>
+          <div class="scrolling-container">
+            <div class="service service-1">
+              <i class="fa-solid fa-plane"></i>
+              <h3>Flight Booking</h3>
+              <p>Book your flights to any destination with ease.</p>
+            </div>
+            <div class="service service-2">
+              <i class="fa-solid fa-hotel"></i>
+              <h3>Hotel Reservations</h3>
+              <p>Find the perfect accommodations for your stay.</p>
+            </div>
+            <div class="service service-3">
+              <i class="fa-solid fa-car"></i>
+              <h3>Car Rentals</h3>
+              <p>Rent a car for your travel convenience.</p>
+            </div>
+            <div class="service service-4">
+              <i class="fa-solid fa-utensils"></i>
+              <h3>Dining Recommendations</h3>
+              <p>Discover the best places to eat during your trip.</p>
+            </div>
+            <div class="service service-5">
+              <i class="fa-solid fa-map"></i>
+              <h3>Guided Tours</h3>
+              <p>Explore your destination with expert-led tours.</p>
+            </div>
+            <div class="service service-6">
+              <i class="fa-solid fa-gift"></i>
+              <h3>Special Occasion Packages</h3>
+              <p>Celebrate special events with custom travel packages.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="testimonial-section">
+          <h2 class="content-heading">Our Customers</h2>
+          <div class="testimonial-container">
+            <!-- <div class="testimonial" id="testimonial-1">
+              <img src="./media/images/customer1.jpg" alt="customer image" />
+              <p>
+                "I had an amazing experience with GrandProject Travel Agency.
+                The staff was friendly and helpful, and the trip was
+                unforgettable."
+              </p>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <h4 class="customer-name">John Doe</h4>
+            </div>
+            <hr /> -->
+          </div>
+          <form id="newReview" class="review-section">
+            <input
+              type="text"
+              placeholder="Your Name"
+              name="todoInput"
+              id="name"
+            />
+            <textarea
+              placeholder="Your Message"
+              name="message"
+              width="100%"
+              id="message"
+            ></textarea>
+            <div class="star-section">
+              <span class="fa fa-star unchecked" id="star-1"></span>
+              <span class="fa fa-star unchecked" id="star-2"></span>
+              <span class="fa fa-star unchecked" id="star-3"></span>
+              <span class="fa fa-star unchecked" id="star-4"></span>
+              <span class="fa fa-star unchecked" id="star-5"></span>
+            </div>
+            <button class="btn-review" id="submit">Add Review</button>
+          </form>
+        </section>
+      </div>
     </main>
     <footer>
-        <div class="footer-container">
-            <div class="social-icons">
-                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-            <div class="footer-nav">
-                <ul>
-                    <li><a href="./home.html">Home</a></li>
-                    <li><a href="./pages/aboutus.html">About<span class="footer-span">Us</span></a></li>
-                    <li><a href="./pages/contactus.html">Contact<span class="footer-span">Us</span></a></li>
-                    <li><a href="./pages/destinations.html">Destinations</a></li>
-                    <li><a href="./pages/login.html">Login</a></li>
-                    <li><a href="./pages/packages.html">Packages</a></li>
-                </ul>
-            </div>
+      <div class="footer-container">
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://www.twitter.com/" target="_blank"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a href="https://www.linkedin.com/" target="_blank"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="https://www.youtube.com/" target="_blank"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
         </div>
-        <div class="footer-bottom">
-            <p>Copyright &copy;2023; Designed by <span class="designer"><a href="html/Group-3.html"
-                        target="_blank">Bug-Busters!</a></span>
-            </p>
+        <div class="footer-nav">
+          <ul>
+            <li><a href="./home.html">Home</a></li>
+            <li>
+              <a href="./pages/aboutus.html"
+                >About<span class="footer-span">Us</span></a
+              >
+            </li>
+            <li>
+              <a href="./pages/contactus.html"
+                >Contact<span class="footer-span">Us</span></a
+              >
+            </li>
+            <li><a href="./pages/destinations.html">Destinations</a></li>
+            <li><a href="./pages/login.html">Login</a></li>
+            <li><a href="./pages/packages.html">Packages</a></li>
+          </ul>
         </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          Copyright &copy;2023; Designed by
+          <span class="designer"
+            ><a href="html/Group-3.html" target="_blank">Bug-Busters!</a></span
+          ><br />
+          <br />
+          <span class="designer"
+            ><a href="tel:4373833096" class="mobile-only"
+              >(+1)437-383-3096</a
+            ></span
+          >
+        </p>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>

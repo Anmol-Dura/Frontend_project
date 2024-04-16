@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/java.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/c5017c04fb.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="icon"
+      href="./media/images/MicrosoftTeams-image.png"
+      type="image/x-icon"
+    />
+    <!--for fav-icon-->
+    <style>
+      * {
+        /*border: 2px solid red;*/
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <a href="./index.html"
+          ><img src="../media/images/logo-01.png" alt="a logo"
+        /></a>
+      </div>
+      <label class="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <nav class="sidebar">
+        <div><a href="../index.html">Home</a></div>
+        <div>
+          <a href="./aboutus.html">About<span>Us</span></a>
+        </div>
+        <div>
+          <a href="./contactus.html">Contact<span>Us</span></a>
+        </div>
+        <div><a href="./destinations.html">Destinations</a></div>
+        <div><a href="./login.html">Login</a></div>
+        <div>
+          <a href="./packages.html" class="desktop-only">Packages</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <form id="bookingForm">
+        <div class="mobile-only">
+          <label for="firstName">Name:</label>
+          <input type="text" id="Name" name="Name" required />
+        </div>
+        <div class="desktop-only">
+          <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" required />
+        </div>
+        <div class="desktop-only">
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" required />
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div>
+          <label for="checkinDate">Check-in Date:</label>
+          <input type="date" id="checkinDate" name="checkinDate" required />
+        </div>
+        <div>
+          <label for="checkoutDate">Check-out Date:</label>
+          <input type="date" id="checkoutDate" name="checkoutDate" required />
+        </div>
+        <div class="service-types-section">
+          <label>Type of Service:</label><br />
+          <div class="service-type">
+            <label for="specialService">Special</label>
+            <input
+              type="radio"
+              id="specialService"
+              name="serviceType"
+              value="special"
+            />
+          </div>
+          <div class="service-type">
+            <label for="normalService">Normal</label>
+            <input
+              type="radio"
+              id="normalService"
+              name="serviceType"
+              value="normal"
+            />
+          </div>
+        </div>
+        <div>
+          <label for="comments">Comments:</label><br />
+          <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+        </div>
+        <div class="buttons-section">
+          <button type="reset">Reset</button>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </main>
+
+    <!-- Booking For with Validation -->
+
+    <footer>
+      <div class="footer-container">
+        <div class="social-icons">
+          <a href="https://www.facebook.com/" target="_blank"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com/" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://www.twitter.com/" target="_blank"
+            ><i class="fa-brands fa-twitter"></i
+          ></a>
+          <a href="https://www.linkedin.com/" target="_blank"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+          <a href="https://www.youtube.com/" target="_blank"
+            ><i class="fa-brands fa-youtube"></i
+          ></a>
+        </div>
+        <div class="footer-nav">
+          <ul>
+            <li><a href="./home.html">Home</a></li>
+            <li>
+              <a href="./aboutus.html"
+                >About<span class="footer-span">Us</span></a
+              >
+            </li>
+            <li>
+              <a href="./contactus.html"
+                >Contact<span class="footer-span">Us</span></a
+              >
+            </li>
+            <li><a href="./destinations.html">Destinations</a></li>
+            <li><a href="./login.html">Login</a></li>
+            <li><a href="./packages.html">Packages</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          Copyright &copy;2023; Designed by
+          <span class="designer"
+            ><a href="html/Group-3.html" target="_blank">Bug-Busters!</a></span
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
