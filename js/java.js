@@ -201,11 +201,6 @@ submit.addEventListener("click", (e) => {
   // console.log(newReviews);
 });
 
-// stars.forEach((star,index) => {
-//   star.addEventListener("click", (e) => {
-//     rating = index + 1;
-//   });
-// });
-
 //creating form validation for the new reviews form
 //if the user does not type his name or the message then the submit button will be disabled
+
