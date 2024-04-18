@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/java.js" defer></script>
+    <script src="../js/bookingJavaScript.js" defer></script>
     <script
       src="https://kit.fontawesome.com/c5017c04fb.js"
       crossorigin="anonymous"
@@ -49,61 +49,94 @@
       </nav>
     </header>
     <main>
-      <form id="bookingForm">
-        <div class="mobile-only">
-          <label for="firstName">Name:</label>
-          <input type="text" id="Name" name="Name" required />
-        </div>
-        <div class="desktop-only">
-          <label for="firstName">First Name:</label>
-          <input type="text" id="firstName" name="firstName" required />
-        </div>
-        <div class="desktop-only">
-          <label for="lastName">Last Name:</label>
-          <input type="text" id="lastName" name="lastName" required />
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div>
-          <label for="checkinDate">Check-in Date:</label>
-          <input type="date" id="checkinDate" name="checkinDate" required />
-        </div>
-        <div>
-          <label for="checkoutDate">Check-out Date:</label>
-          <input type="date" id="checkoutDate" name="checkoutDate" required />
-        </div>
-        <div class="service-types-section">
-          <label>Type of Service:</label><br />
-          <div class="service-type">
-            <label for="specialService">Special</label>
-            <input
-              type="radio"
-              id="specialService"
-              name="serviceType"
-              value="special"
-            />
+      <div class="booking-section">
+        <div class="background-image-booking"></div>
+        <form id="bookingForm">
+          <div class="mobile-only">
+            <label for="firstName">Name:</label>
+            <input type="text" id="Name" name="Name" required />
           </div>
-          <div class="service-type">
-            <label for="normalService">Normal</label>
-            <input
-              type="radio"
-              id="normalService"
-              name="serviceType"
-              value="normal"
-            />
+          <div class="desktop-only">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required />
           </div>
-        </div>
-        <div>
-          <label for="comments">Comments:</label><br />
-          <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
-        </div>
-        <div class="buttons-section">
-          <button type="reset">Reset</button>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
+          <div class="desktop-only">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="checkinDate">Check-in Date:</label>
+            <input type="date" id="checkinDate" name="checkinDate" required />
+          </div>
+          <div>
+            <label for="checkoutDate">Check-out Date:</label>
+            <input type="date" id="checkoutDate" name="checkoutDate" required />
+          </div>
+          <div class="service-types-section">
+            <label>Packages:</label><br />
+            <div class="service-type">
+              <label for="adventurousAlberta">Adventurous Alberta</label>
+              <input
+                type="radio"
+                id="adventurousAlberta"
+                class="service-Radio"
+                name="serviceType"
+                value="adventurousAlberta"
+              />
+            </div>
+            <div class="service-type">
+              <label for="marvellousOntario">Marvellous Ontario</label>
+              <input
+                type="radio"
+                id="marvellousOntario"
+                class="service-Radio"
+                name="serviceType"
+                value="marvellousOntario"
+              />
+            </div>
+            <div class="service-type">
+              <label for="easternEscapade">Eastern Escapade</label>
+              <input
+                type="radio"
+                id="easternEscapade"
+                class="service-Radio"
+                name="serviceType"
+                value="easternEscapade"
+              />
+            </div>
+          </div>
+          <div>
+            <label for="numberOfGuests">Number of Guests:</label>
+            <input
+              type="number"
+              id="numberOfGuests"
+              name="numberOfGuests"
+              min="1"
+              required
+            />
+          <div>
+            <label for="comments">Comments:</label><br />
+            <textarea
+              id="comments"
+              name="comments"
+              rows="4"
+              cols="50"
+            ></textarea>
+          </div>
+          <div>
+            <label for="totalPrice">Total Price:</label>
+            <input type="text" id="totalPrice" name="totalPrice" readonly />
+          </div>
+          <div class="buttons-section">
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     </main>
 
     <!-- Booking For with Validation -->
