@@ -931,11 +931,12 @@ label {
 
 /* Styling for the destination page */
 
-body.destination-page {
+body.destination-main {
   background-image: url("../media/images/banff.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  clear: both;
 }
 
 .destination-page {
