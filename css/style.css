@@ -686,6 +686,7 @@ span a {
 #Pack-Title {
     background-color: rgba(0, 0, 0, 0.3);
     color: black;
+    clear: both;
 }
 
 .PackBtn-container button {
