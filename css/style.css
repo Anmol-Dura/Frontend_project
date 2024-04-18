@@ -1505,45 +1505,6 @@ label {
     margin-left:52%;
   }
 
-
-  footer {
-    clear: both;
-  }
-
-  /*  STYLING DESTINATION PAGE FOR TABLET*/
-  .destination-description img {
-    width: 48%;
-    float: left;
-  }
-
-  .destination-container, #destination-niagara, #destination-blue, #destination-banff, #destination-calgary, #destination-canmore, #destination-montreal, #destination-quebec, #destination-hallifax  {
-    clear: both;
-  }
-
-  .destination-description p {
-    width: 45%;
-    float: right;
-  }
-  .destination-container {
-    overflow:auto;
-  }
-
-  /*  STYLING CONTACT PAGE FOR TABLET*/
-
-  .contact-details , .contact-map {
-    width: 48%;
-  }
-
-  .contact-details {
-    float: left;
-    margin-left: 1%;
-  }
-
-  .contact-map {
-    margin-left:52%;
-  }
-}
-
   /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
     /*  STYLING PACKAGES PAGE*/
     
@@ -1564,7 +1525,6 @@ label {
   .Tablet {
     display: flex;
   }
-
 
   /* ///////////////////////About Us ////////////////////////////////////////// */
   #aboutus .client1,
@@ -1761,8 +1721,6 @@ label {
     float: right;
     margin-right:2%;
   }
-
-    
     /*  STYLING PACKAGES PAGE*/
     
     .Itinerary {
