@@ -945,7 +945,7 @@ body.destination-main {
   @media only screen and (max-width: 600px) {
 
       .destination-description .full-description {
-          display: none;
+          display: none; 
       }
 
       .destination-description .mobile-description {
@@ -1154,5 +1154,262 @@ body.destination-main {
   transform-origin: center center;
   max-width: 100vh;
   max-height: 100vw;
+}
+
+
+
+
+
+
+/* ////////////////////////////////CONTACT page/////////////////////////////////////////// */
+
+
+/* Contact us page */
+
+/* CSS for Contact Info */
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 40px auto; /* Aumentado el margin */
+  padding: 30px;
+  padding-right: 40px; /* Añadimos padding a la derecha */
+  padding-left: 40px;  /* Añadimos padding a la izquierda */
+  max-width: 900px; /* Aumentado el ancho máximo */
+  box-sizing: border-box;
+  border: 2px solid #ccc; /* Añadido un borde */
+  border-radius: 15px; /* Aumentado el radio del borde */
+  background-color: #ffffff; /* Fondo blanco */
+}
+
+.contact-info h2 {
+  color: #333;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: center;
+  font-size: 32px; /* Aumentado el tamaño del título */
+  margin-bottom: 30px; /* Aumentado el margin-bottom */
+  width: 100%;
+  border-radius: 15px;
+}
+
+.contact-details,
+.map {
+  flex-basis: 48%;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background-color: #f5f5f5; /* Fondo ligeramente gris */
+  padding: 30px;
+  margin-bottom: 30px;
+  border: 2px solid #ccc; /* Añadido un borde */
+}
+
+.contact-details p {
+  margin-bottom: 20px;
+}
+
+.contact-details a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.map {
+  overflow: hidden;
+}
+
+.map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+/* CSS for Contact Form */
+.contact-form {
+  background-color: #f5f5f5; /* Fondo ligeramente gris */
+  border-radius: 15px;
+  padding: 30px;
+  padding-right: 40px; /* Añadimos padding a la derecha */
+  padding-left: 40px;  /* Añadimos padding a la izquierda */
+  margin: 40px auto; /* Aumentado el margin */
+  max-width: 900px; /* Aumentado el ancho máximo */
+  box-sizing: border-box;
+  border: 2px solid #ccc; /* Añadido un borde */
+}
+
+.contact-form h2 {
+  color: #333;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  text-align: center;
+  font-size: 32px; /* Aumentado el tamaño del título */
+  margin-bottom: 30px; /* Aumentado el margin-bottom */
+  border-radius: 15px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .form-group {
+  margin-bottom: 25px; /* Aumentado el margin-bottom */
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 10px; /* Aumentado el margin-bottom */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Aumentado el radio del borde */
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px; /* Aumentado el radio del borde */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+  .contact-info {
+      flex-direction: column;
+      padding: 20px;
+      padding-right: 30px; /* Ajustes de padding */
+      padding-left: 30px;  /* Ajustes de padding */
+  }
+
+  .contact-details, .map {
+      flex-basis: 100%;
+  }
+
+  .contact-form {
+      padding: 20px;
+      padding-right: 30px; /* Ajustes de padding */
+      padding-left: 30px;  /* Ajustes de padding */
+  }
+
+  .contact-form h2 {
+      font-size: 28px; /* Ajustado el tamaño del título */
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  .contact-form, .contact-info {
+      padding: 25px;
+      padding-right: 35px; /* Ajustes de padding */
+      padding-left: 35px;  /* Ajustes de padding */
+  }
+
+  .contact-form h2, .contact-info h2 {
+      font-size: 30px; /* Ajustado el tamaño del título */
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .contact-form, .contact-info {
+      padding: 30px;
+      padding-right: 40px; /* Ajustes de padding */
+      padding-left: 40px;  /* Ajustes de padding */
+  }
+
+  .contact-form h2, .contact-info h2 {
+      font-size: 32px; /* Ajustado el tamaño del título */
+  }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #222;
+  color: #fff;
+}
+
+.dark-mode .contact-info,
+.dark-mode .contact-form {
+  background-color: #444;
+  color: #fff;
+}
+
+.dark-mode .contact-details,
+.dark-mode .map {
+  background-color: #333;
+}
+
+.dark-mode .contact-details p {
+  color: #fff;
+}
+
+.dark-mode .contact-details a {
+  color: #08f;
+}
+
+.dark-mode .contact-details a:hover {
+  text-decoration: underline;
+}
+
+.dark-mode .contact-form button[type="submit"] {
+  background-color: #08f;
+}
+
+/* Light Mode Background Image */
+.light-mode-background {
+  background-image: url("../media/images/banff.jpg");
+}
+
+/* Dark Mode Background Image */
+.dark-mode-background {
+  background-image: url("../media/images/toronto.jpg");
+}
+
+.dark-mode {
+  color: #ffffff; /* Color de texto blanco */
+}
+
+.dark-mode .contact-info h2,
+.dark-mode .contact-form h2,
+.dark-mode .contact-details p {
+  color: #ffffff; /* Color de texto blanco para títulos y párrafos */
+}
+
+.dark-mode .contact-details a {
+  color: #bbdefb; /* Un tono más claro para enlaces en modo oscuro */
+}
+
+.dark-mode .contact-details a:hover {
+  text-decoration: underline;
+  color: #ffffff; /* Cambia el color al pasar el cursor por encima */
+}
+
+body.contact-page {
+  background-image: url("../media/images/banff.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+/* Dark Mode Background for Contact Page */
+body.contact-page.dark-mode-background {
+  background-image: url("../media/images/toronto.jpg");
 }
 
