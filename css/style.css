@@ -637,6 +637,173 @@ label {
   /* visibility: hidden; */
 }
 
+/* -----------------------------------DESTINATIONS PAGE ---------------------------- */
+/*designing for the destination page mobile */
+
+.destination-main, .toggle-container {
+  margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+.destination-main h1 {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: black;
+  padding: 10px;
+  font-size: 40px;
+  text-align: center;
+  margin: 0.5em 0;
+  padding: 0;
+}
+
+.destinations, .contact-container{
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: url("../media/images/banff.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: auto;
+}
+
+.destination-description .full-description {
+  display: none;
+} 
+
+.destination-description .mobile-description {
+  display: block;
+}
+
+
+.destination-container {
+  background-color: #f2f2f2;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  width: 90%;
+}
+
+.destination-container:hover{
+  background-color: rgb(206,17,65);
+  color: white;
+}
+
+.destination-info {
+  padding: 0.5cm;
+}
+
+.destination-info img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.destination-title {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-align: center; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.destination-description {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  text-align: justify; 
+}
+
+
+/* -----------------------------------CONTACT US PAGE ---------------------------- */
+
+
+/* Base styles for Contact Info and Contact Form */
+
+.contact-form,.contact-info,
+.map  {
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 2em auto;
+  max-width: 95%; 
+  box-sizing: border-box;
+}
+
+.contact-info h2, .contact-form h2 {
+  color: #fff;
+  background: rgb(206,17,65);
+  padding: 10px;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.contact-map {
+  overflow: hidden;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #0056b3;
+}
+
 /* Media query for tablet view */
 @media only screen and (min-width: 768px) {
   .hamburger-menu,
@@ -829,8 +996,45 @@ label {
     gap: 10px;
   }
 
-  /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+  footer {
+    clear: both;
+  }
+
+  /*  STYLING DESTINATION PAGE FOR TABLET*/
+  .destination-description img {
+    width: 48%;
+    float: left;
+  }
+
+  .destination-container, #destination-niagara, #destination-blue, #destination-banff, #destination-calgary, #destination-canmore, #destination-montreal, #destination-quebec, #destination-hallifax  {
+    clear: both;
+  }
+
+  .destination-description p {
+    width: 45%;
+    float: right;
+  }
+  .destination-container {
+    overflow:auto;
+  }
+
+  /*  STYLING CONTACT PAGE FOR TABLET*/
+
+  .contact-details , .contact-map {
+    width: 48%;
+  }
+
+  .contact-details {
+    float: left;
+    margin-left: 1%;
+  }
+
+  .contact-map {
+    margin-left:52%;
+  }
 }
+
+  /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
 
 /* ////////////////////////////////Media query for desktop view/////////////////////////////////////////// */
 @media only screen and (min-width: 1024px) {
@@ -921,495 +1125,53 @@ label {
   .footer-nav ul {
     flex-direction: row;
   }
-}
 
+  /*  STYLING DESTINATION PAGE*/
 
-
-
-
-/* ////////////////////////////////DESTINATIONS page/////////////////////////////////////////// */
-
-/* Styling for the destination page */
-
-body.destination-main {
-  background-image: url("../media/images/banff.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  clear: both;
-}
-
-.destination-page {
-
-  /*mobile styles*/ 
-  @media only screen and (max-width: 600px) {
-
-      .destination-description .full-description {
-          display: none; 
-      }
-
-      .destination-description .mobile-description {
-          display: block;
-      }
-
-      .destinations {
-          display: block;
-          margin: 20px;
-      }
-
-      .destination-container {
-          background-color: #f2f2f2;
-          margin-bottom: 20px;
-          padding: 10px;
-          border-radius: 10px;
-      }
-
-      .destination-info {
-          padding: 0.5cm;
-      }
-
-      .destination-info img {
-          width: 100%;
-          height: auto;
-          object-fit: cover;
-      }
-
-      .destination-title {
-          font-size: 24px;
-          margin-bottom: 10px;
-          text-align: center; 
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      .destination-description {
-          margin-bottom: 20px;
-          text-align: justify; 
-      }
-
-      .destination-main h1 {
-          color: #fff;
-          background: rgba(0, 0, 0, 0.5);
-          padding: 10px;
-          font-size: 40px;
-          text-align: center;
-      }
+  .destination-description img {
+    width: 97%;
+    float: none;
   }
 
-  /* Estilos tablets */
-  @media only screen and (min-width: 601px) and (max-width: 1024px) {
-
-      .destinations {
-          display: block;
-          margin: 20px auto;
-          max-width: 800px;
-          padding: 0 20px;
-      }
-
-      .destination-container {
-          background-color: #f2f2f2;
-          margin-bottom: 20px;
-          padding: 10px;
-          border-radius: 10px;
-          max-width: calc(100% - 40px);
-          box-sizing: border-box;
-      }
-
-      .destination-info {
-          display: flex;
-          flex-direction: column;
-          align-items: center; 
-          text-align: center; 
-      }
-
-      .destination-info img {
-          width: 100%;
-          height: auto;
-          object-fit: cover;
-          margin-bottom: 10px;
-      }
-
-      .destination-title {
-          font-size: 24px;
-          margin-bottom: 10px;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      .destination-description {
-          text-align: justify;
-      }
-
-      .destination-main h1 {
-          color: #fff;
-          background: rgba(0, 0, 0, 0.5);
-          padding: 10px;
-          font-size: 40px;
-          text-align: center;
-      }
+  .destination-container, #destination-niagara, #destination-blue, #destination-banff, #destination-calgary, #destination-canmore , 
+   #destination-montreal, #destination-quebec, #destination-hallifax  {
+    clear: none;
   }
 
-  /* Estilos desktop */
-  @media only screen and (min-width: 1025px) {
-      
-      .destination-description .mobile-description {
-          display: none;
-      }
-
-      .destination-description .full-description {
-          display: block;
-      }
-
-      .destinations {
-          display: flex;
-          justify-content: space-between;
-          margin: 20px;
-      }
-
-      .destination-container {
-          flex-basis: 30%;
-          background-color: #f2f2f2;
-          margin-bottom: 20px;
-          padding: 10px;
-          border-radius: 10px;
-      }
-
-      .destination-info {
-          padding: 0.5cm;
-      }
-
-      .destination-info img {
-          width: 100%;
-          height: auto;
-          object-fit: cover;
-      }
-
-      .destination-title {
-          font-size: 24px;
-          margin-bottom: 10px;
-          text-align: center;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      .destination-description {
-          margin-bottom: 20px;
-          text-align: justify;
-      }
-
-      .destination-main h1 {
-          color: #fff;
-          background: rgba(0, 0, 0, 0.5);
-          padding: 10px;
-          font-size: 40px;
-          text-align: center;
-      }
+  .destination-description p {
+    font-size: 0.9em;
+    width: 97%;
+    float: none;
+  }
+  .destination-container {
+    overflow: auto;
+  }
+  .destination-container {
+    width: 31%;
+    float: left;
+    margin-left: 2%;
   }
 
-  /*js features*/
-  /* Modal styles */
-  .modal {
-      position: fixed !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      height: 100% !important;
-      background-color: rgba(0, 0, 0, 0.5) !important;
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-  }
+  /*  STYLING CONTACT PAGE*/
 
-  .modal-content {
-      background-color: white !important;
-      padding: 20px !important;
-      border-radius: 5px !important;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) !important;
-  }
-
-  .close {
-      position: absolute !important;
-      top: 10px !important;
-      right: 10px !important;
-      font-size: 20px !important;
-      cursor: pointer !important;
-  }
-
-  /* CSS for dark mode */
-  .dark-mode .destination-container {
-      background-color: #000; /* Black background color */
-      color: #fff; /* White text color */
-  }
-}
-
-/* Estilos para imágenes en modo vertical */
-.destination-image {
-  max-width: 100vw;
-  max-height: 100vh;
-  object-fit: contain; /* Ajusta la imagen manteniendo la proporción */
-  margin: auto;
-  display: block;
-}
-
-/* Estilos para imágenes en modo horizontal */
-.destination-image.mobile-orientation {
-  transform: rotate(90deg);
-  transform-origin: center center;
-  max-width: 100vh;
-  max-height: 100vw;
-}
-
-
-
-
-
-
-/* ////////////////////////////////CONTACT page/////////////////////////////////////////// */
-
-
-/* Contact us page */
-
-/* CSS for Contact Info */
-.contact-info {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 40px auto; /* Aumentado el margin */
-  padding: 30px;
-  padding-right: 40px; /* Añadimos padding a la derecha */
-  padding-left: 40px;  /* Añadimos padding a la izquierda */
-  max-width: 900px; /* Aumentado el ancho máximo */
-  box-sizing: border-box;
-  border: 2px solid #ccc; /* Añadido un borde */
-  border-radius: 15px; /* Aumentado el radio del borde */
-  background-color: #ffffff; /* Fondo blanco */
-}
-
-.contact-info h2 {
-  color: #333;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 15px;
-  text-align: center;
-  font-size: 32px; /* Aumentado el tamaño del título */
-  margin-bottom: 30px; /* Aumentado el margin-bottom */
-  width: 100%;
-  border-radius: 15px;
-}
-
-.contact-details,
-.map {
-  flex-basis: 48%;
-  box-sizing: border-box;
-  border-radius: 15px;
-  background-color: #f5f5f5; /* Fondo ligeramente gris */
-  padding: 30px;
-  margin-bottom: 30px;
-  border: 2px solid #ccc; /* Añadido un borde */
-}
-
-.contact-details p {
-  margin-bottom: 20px;
-}
-
-.contact-details a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.contact-details a:hover {
-  text-decoration: underline;
-}
-
-.map {
-  overflow: hidden;
-}
-
-.map iframe {
-  width: 100%;
-  height: 300px;
-  border: none;
-}
-
-/* CSS for Contact Form */
-.contact-form {
-  background-color: #f5f5f5; /* Fondo ligeramente gris */
-  border-radius: 15px;
-  padding: 30px;
-  padding-right: 40px; /* Añadimos padding a la derecha */
-  padding-left: 40px;  /* Añadimos padding a la izquierda */
-  margin: 40px auto; /* Aumentado el margin */
-  max-width: 900px; /* Aumentado el ancho máximo */
-  box-sizing: border-box;
-  border: 2px solid #ccc; /* Añadido un borde */
-}
-
-.contact-form h2 {
-  color: #333;
-  background: rgba(0, 0, 0, 0.2);
-  padding: 15px;
-  text-align: center;
-  font-size: 32px; /* Aumentado el tamaño del título */
-  margin-bottom: 30px; /* Aumentado el margin-bottom */
-  border-radius: 15px;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form .form-group {
-  margin-bottom: 25px; /* Aumentado el margin-bottom */
-}
-
-.contact-form label {
-  font-weight: bold;
-  margin-bottom: 10px; /* Aumentado el margin-bottom */
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px; /* Aumentado el radio del borde */
-}
-
-.contact-form textarea {
-  resize: vertical;
-}
-
-.contact-form button[type="submit"] {
-  width: 100%;
-  padding: 15px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 8px; /* Aumentado el radio del borde */
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-form button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-/* Responsive Styles */
-@media only screen and (max-width: 600px) {
   .contact-info {
-      flex-direction: column;
-      padding: 20px;
-      padding-right: 30px; /* Ajustes de padding */
-      padding-left: 30px;  /* Ajustes de padding */
+    width: 64%;
   }
 
-  .contact-details, .map {
-      flex-basis: 100%;
+  .contact-info {
+    float: left;
+    margin-left: 1%;
+  }
+
+  .contact-map {
+    margin-left: 52%;
   }
 
   .contact-form {
-      padding: 20px;
-      padding-right: 30px; /* Ajustes de padding */
-      padding-left: 30px;  /* Ajustes de padding */
-  }
-
-  .contact-form h2 {
-      font-size: 28px; /* Ajustado el tamaño del título */
-  }
+    width: 32%;
+    float: right;
+    margin-right:2%;
+  }
 }
 
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-  .contact-form, .contact-info {
-      padding: 25px;
-      padding-right: 35px; /* Ajustes de padding */
-      padding-left: 35px;  /* Ajustes de padding */
-  }
-
-  .contact-form h2, .contact-info h2 {
-      font-size: 30px; /* Ajustado el tamaño del título */
-  }
-}
-
-@media only screen and (min-width: 1025px) {
-  .contact-form, .contact-info {
-      padding: 30px;
-      padding-right: 40px; /* Ajustes de padding */
-      padding-left: 40px;  /* Ajustes de padding */
-  }
-
-  .contact-form h2, .contact-info h2 {
-      font-size: 32px; /* Ajustado el tamaño del título */
-  }
-}
-
-/* Dark Mode Styles */
-.dark-mode {
-  background-color: #222;
-  color: #fff;
-}
-
-.dark-mode .contact-info,
-.dark-mode .contact-form {
-  background-color: #444;
-  color: #fff;
-}
-
-.dark-mode .contact-details,
-.dark-mode .map {
-  background-color: #333;
-}
-
-.dark-mode .contact-details p {
-  color: #fff;
-}
-
-.dark-mode .contact-details a {
-  color: #08f;
-}
-
-.dark-mode .contact-details a:hover {
-  text-decoration: underline;
-}
-
-.dark-mode .contact-form button[type="submit"] {
-  background-color: #08f;
-}
-
-/* Light Mode Background Image */
-.light-mode-background {
-  background-image: url("../media/images/banff.jpg");
-}
-
-/* Dark Mode Background Image */
-.dark-mode-background {
-  background-image: url("../media/images/toronto.jpg");
-}
-
-.dark-mode {
-  color: #ffffff; /* Color de texto blanco */
-}
-
-.dark-mode .contact-info h2,
-.dark-mode .contact-form h2,
-.dark-mode .contact-details p {
-  color: #ffffff; /* Color de texto blanco para títulos y párrafos */
-}
-
-.dark-mode .contact-details a {
-  color: #bbdefb; /* Un tono más claro para enlaces en modo oscuro */
-}
-
-.dark-mode .contact-details a:hover {
-  text-decoration: underline;
-  color: #ffffff; /* Cambia el color al pasar el cursor por encima */
-}
-
-body.contact-page {
-  background-image: url("../media/images/banff.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-/* Dark Mode Background for Contact Page */
-body.contact-page.dark-mode-background {
-  background-image: url("../media/images/toronto.jpg");
-}
 
