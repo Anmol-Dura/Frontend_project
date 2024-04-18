@@ -1,3 +1,4 @@
+let logTab = document.getElementById('logout');
 document.addEventListener("DOMContentLoaded", function() {
     
     // Agregar event listeners para la visualización de imágenes en modal
@@ -29,4 +30,32 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     });
+
+    // To verify if the user is logged
+    let userLogged = localStorage.getItem('islogged');
+
+    let wishlistItems = document.querySelectorAll(".Wishlist");
+    if (userLogged == 'true'){
+        wishlistItems.forEach(function(item) {
+            item.style.display = 'block';
+        });
+        logTab.textContent = "LogOut"
+    }
+    else {
+        wishlistItems.forEach(function(item) {
+            item.style.display = 'none';
+        });
+    }
 });
+
+logTab.addEventListener('click',function(e){
+    e.preventDefault();
+    let tabtext = logTab.textContent;
+    console.log(tabtext)
+    if (tabtext === 'LogOut'){
+        localStorage.clear();
+        localStorage.setItem('islogged',false)
+        logTab.textContent = "LogIn"
+    }
+    window.location.href = './pages/login.html';
+  })
