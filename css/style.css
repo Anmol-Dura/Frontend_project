@@ -546,7 +546,7 @@ span a {
     overflow: hidden;
 }
 
-input {
+.entry-field input {
     width: 100%;
     background: transparent;
     border: 0;
@@ -839,7 +839,6 @@ form {
 /* Media query for tablet view */
 @media only screen and (min-width: 768px) {
 
-  
   .hamburger-menu,
   .hamburger-menu::after,
   .hamburger-menu::before {
