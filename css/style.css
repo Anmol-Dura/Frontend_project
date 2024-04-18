@@ -736,10 +736,11 @@ input {
     color: rgb(206,17,65);
 }
 
-.mobile {
+#searchBar {
     max-width: 95%;
     margin: auto;
     margin-bottom: 2%;
+    clear: both;
 }
 
 .mobile i, .mobile input {
@@ -838,13 +839,7 @@ form {
 /* Media query for tablet view */
 @media only screen and (min-width: 768px) {
 
-    .mobile {
-        visibility: hidden;
-    }
-
-    .Tablet {
-        display: flex;
-    }
+  
   .hamburger-menu,
   .hamburger-menu::after,
   .hamburger-menu::before {
@@ -1032,15 +1027,23 @@ form {
   /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
     /*  STYLING PACKAGES PAGE*/
     
-    .Itinerary {
-        float: left;
-        width: 45%;
-    }
+  .Itinerary {
+    float: left;
+    width: 45%;
+  }
 
-    .Details {
-        float: right;
-        width: 48%;
-    }
+  .Details {
+    float: right;
+    width: 48%;
+  }
+
+  #searchBar {
+    visibility: hidden;
+  }
+
+  .Tablet {
+    display: flex;
+  }
 
 }
 
