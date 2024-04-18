@@ -637,6 +637,183 @@ label {
   /* visibility: hidden; */
 }
 
+/* //////////////////////////////////////////About Us Page //////////////////////////// */
+/* table design */
+#aboutus .heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 1rem;
+  /* height: 5.9rem; */
+  height: 4rem;
+  clear: both;
+}
+
+#aboutus .heading h1 {
+  font-size: 2rem;
+  border: 4px solid var(--foreground);
+  padding: 30px;
+  height: auto;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 2rem;
+  transition: 0.5s;
+  background-color: var(--foreground);
+}
+
+#aboutus table {
+  width: 100%;
+  border: 2px solid rgb(63, 63, 63);
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#aboutus table .topic {
+  flex: 1;
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+  font-weight: 700;
+}
+
+#aboutus table,
+#aboutus th,
+#aboutus td {
+  border-bottom: 1px solid #d7d4d4;
+  padding: 20px;
+  text-align: center;
+}
+
+/* review container */
+#aboutus .review-container {
+  display: flex;
+  color: black;
+  max-width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+#aboutus .client1,
+#aboutus .client2,
+#aboutus .client3 {
+  padding-top: 2%;
+  margin: 5%;
+  border: 2px solid whitesmoke;
+  border-radius: 10%;
+  background-color: whitesmoke;
+  border: 10px solid var(--foreground);
+}
+
+#aboutus .client-review {
+  color: black;
+  text-align: center;
+}
+
+#aboutus .review-container {
+  display: block;
+  align-items: center;
+}
+
+#aboutus .review {
+  width: 25%;
+  height: auto;
+  border: 2px solid black;
+  color: whitesmoke;
+  text-align: center;
+  border-radius: 10%;
+}
+
+#aboutus .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; /* Aligns items with space between them */
+}
+
+#aboutus .operation-table {
+  flex: 1;
+}
+
+#aboutus .map-container {
+  flex: 1;
+  padding: 30px;
+}
+
+/* Media Query for mobile and tablet view */
+@media (max-width: 768px) {
+  #aboutus .container {
+    flex-direction: column; /* Stack items vertically */
+  }
+
+  #aboutus .operation-table,
+  #aboutus .map-container {
+    width: 100%; /* Make the divs take up full width */
+  }
+}
+
+#aboutus .video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#aboutus .video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  padding: 2rem;
+}
+
+#aboutus .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay color with opacity */
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#aboutus .overlay-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+}
+
+#aboutus .overlay-content h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#aboutus .overlay-content p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+#aboutus .overlay-content a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#aboutus .overlay-content a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 /* Media query for tablet view */
 @media only screen and (min-width: 768px) {
   .hamburger-menu,
@@ -830,6 +1007,24 @@ label {
   }
 
   /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+
+  /* ///////////////////////About Us ////////////////////////////////////////// */
+  #aboutus .client1,
+  #aboutus .client2,
+  #aboutus .client3 {
+    width: 40%;
+    height: 15rem;
+    margin: 1rem;
+    margin-top: 2rem;
+  }
+
+  #aboutus .client-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    flex-wrap: wrap;
+  }
 }
 
 /* ////////////////////////////////Media query for desktop view/////////////////////////////////////////// */
@@ -895,6 +1090,46 @@ label {
     /* grid-auto-columns: 35%; */
     grid-template-columns: repeat(6, 1fr);
     padding-top: 1rem;
+  }
+  /*///////////////////////////////////// About Us ///////////////////////////////////////////////////*/
+  /* Desktop view styles here */
+  #aboutus .client1,
+  #aboutus .client2,
+  #aboutus .client3 {
+    width: 33.33%;
+  }
+
+  #aboutus .client {
+    transition: all ease-in-out 0.3s;
+  }
+  #aboutus .container {
+    flex-direction: row;
+    padding: 1rem;
+  }
+  #aboutus .review-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  #aboutus .client:hover {
+    transform: scale(1.05);
+  }
+
+  #aboutus .client-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0rem;
+    flex-wrap: nowrap;
+  }
+
+  #aboutus .heading h1:hover {
+    border: 4px solid var(--background);
+  }
+  #aboutus tr:hover {
+    background-color: rgb(148, 145, 145);
   }
 
   /* Only applicable on the desktop view of the website */
