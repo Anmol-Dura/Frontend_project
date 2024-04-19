@@ -143,10 +143,10 @@ function checkInputs() {
         }
 
 } else {
-        if (usernameValue === '') {
+        if (usernameValue === '' && window.matchMedia("(min-width: 768px)").matches){
             ErrorFunction(nameInput,"Name is Mandatory");
         }
-        else {
+        else if (window.matchMedia("(min-width: 768px)").matches) {
             SuccessFunction(nameInput);
         }
 
