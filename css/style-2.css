@@ -8,10 +8,14 @@
 }
 
 body {
-  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+}
+header {
+  overflow-x: hidden;
 }
 
 /* Designing for the navbar */
@@ -26,7 +30,7 @@ body {
   --bar-width: 65px;
   --bar-height: 10px;
   --hamburger-gap: 6px;
-  --foreground: rgb(206,17,65);
+  --foreground: rgb(206, 17, 65);
   --background: white;
   --hamburger-margins: 8px;
   --size-3: 3rem;
@@ -96,7 +100,7 @@ nav.sidebar {
   display: block;
   position: absolute;
   /* make it at the center */
-  left: 150%;
+  left: -100%;
   top: 15%;
   transform: translateX(-50%);
   margin: 0 auto 0rem;
@@ -133,7 +137,7 @@ nav.sidebar {
   display: block;
   min-width: 200px;
   padding: 1rem;
-  border: 2px solid rgb(206,17,65);
+  border: 2px solid rgb(206, 17, 65);
   /* border: transparent; */
   border-radius: 1rem;
   /* pointer-events: none; */
@@ -141,11 +145,11 @@ nav.sidebar {
   /* font-size: 1.4rem; */
   font-size: clamp(16px, 5vw, 24px);
   /* The clamp function is used to make the object it is applied responsive without the use of any mediaqueries  */
-  color: rgb(206,17,65);
+  color: rgb(206, 17, 65);
   box-shadow: none;
   z-index: 1;
   /* transition: all 1s ease-in-out; */
-  box-shadow: 0px 0px 8px rgb(206,17,65);
+  box-shadow: 0px 0px 8px rgb(206, 17, 65);
 }
 
 .hamburger-menu:has(input:checked) ~ nav div .desktop-only {
@@ -200,6 +204,7 @@ main * {
 }
 
 .hero-section {
+  /* overflow: hidden; */
   clear: both;
   width: 100%;
   height: 300px;
@@ -407,7 +412,7 @@ main * {
 
 /* designing for footer... */
 footer {
-  background-color: rgb(206,17,65);
+  background-color: rgb(206, 17, 65);
   z-index: 200;
   margin-top: 5rem;
 }
@@ -666,7 +671,6 @@ span a {
   color: #000;
 }
 
-
 /* ////////////////////////////////Booking page/////////////////////////////////////////// */
 main .booking-section {
   width: 100%;
@@ -787,7 +791,7 @@ button[type="submit"]:hover {
 }
 
 /* Styling form container*/
-.login-form{
+.login-form {
   max-width: 95%;
   margin: auto;
   background: #fff;
@@ -795,8 +799,7 @@ button[type="submit"]:hover {
   padding: 0 2em 2em;
   display: block;
   align-items: center;
-  border: 2px rgb(206,17,65) solid;
-  
+  border: 2px rgb(206, 17, 65) solid;
 }
 
 /* Styling form fields */
@@ -870,7 +873,8 @@ button[type="submit"]:hover {
   justify-content: space-evenly;
 }
 
-.login-buttons button, .Button-container button {
+.login-buttons button,
+.Button-container button {
   flex-basis: 50%;
   background: black;
   color: #fff;
@@ -892,7 +896,7 @@ button[type="submit"]:hover {
 #progress {
   width: 0%;
   height: 20px;
-  background-color: rgb(206,17,65);
+  background-color: rgb(206, 17, 65);
   text-align: center;
   line-height: 20px;
   color: white;
@@ -918,7 +922,6 @@ button[type="submit"]:hover {
   color: white;
 }
 
-
 .Packages img {
   width: 95%;
   display: block;
@@ -929,11 +932,12 @@ button[type="submit"]:hover {
   display: none;
 }
 
-.Desktop p , .Map{
+.Desktop p,
+.Map {
   display: none;
 }
 
-.pack-container{
+.pack-container {
   position: relative;
   overflow: auto;
 }
@@ -944,8 +948,9 @@ button[type="submit"]:hover {
   clear: both;
 }
 
-#Pack-Title , .Packages {
-  text-align: center; 
+#Pack-Title,
+.Packages {
+  text-align: center;
   margin: 1em 0;
   margin-left: 1%;
   width: 98%;
@@ -959,9 +964,9 @@ button[type="submit"]:hover {
 }
 
 .PackBtn-container button {
-  background: rgb(206,17,65);
+  background: rgb(206, 17, 65);
   color: #fff;
-  border: solid rgb(206,17,65);
+  border: solid rgb(206, 17, 65);
   border-radius: 0.5em;
   height: 2.5em;
   margin: 2%;
@@ -971,26 +976,27 @@ button[type="submit"]:hover {
   text-align: center;
 }
 
-.Packages  {
-  background-color: rgb(206,17,65);
+.Packages {
+  background-color: rgb(206, 17, 65);
   border: 1px black solid;
   color: white;
   font-size: 1.3em;
   overflow: auto;
 }
 
-.Itinerary , .Details {
-  border: 1px rgb(206,17,65) solid;
+.Itinerary,
+.Details {
+  border: 1px rgb(206, 17, 65) solid;
   background-color: rgb(253, 253, 253);
   color: black;
   margin: 0.5em;
   border-radius: 0.5em;
   line-height: 1.2em;
-} 
+}
 
 .Details p {
   display: inline;
-  margin: 1em ;
+  margin: 1em;
 }
 
 .Details i {
@@ -999,13 +1005,13 @@ button[type="submit"]:hover {
 
 .Button-container button {
   background-color: white;
-  color: rgb(206,17,65);
+  color: rgb(206, 17, 65);
   margin-bottom: 0.5em;
 }
 
 .Packages:hover {
-  background-color:white;
-  color: rgb(206,17,65);
+  background-color: white;
+  color: rgb(206, 17, 65);
 }
 
 #searchBar {
@@ -1015,15 +1021,16 @@ button[type="submit"]:hover {
   clear: both;
 }
 
-.mobile i, .mobile input {
-  font-size: 1.2em;;
+.mobile i,
+.mobile input {
+  font-size: 1.2em;
 }
-
 
 /* -----------------------------------DESTINATIONS PAGE ---------------------------- */
 /*designing for the destination page */
 
-.destination-main , .toggle-container{
+.destination-main,
+.toggle-container {
   margin: 0;
   padding: 0;
   clear: both;
@@ -1039,7 +1046,8 @@ button[type="submit"]:hover {
   padding: 0;
 }
 
-.destinations, .contact-container {
+.destinations,
+.contact-container {
   width: 100%;
   margin: 0;
   padding: 0;
@@ -1048,49 +1056,48 @@ button[type="submit"]:hover {
 }
 
 .destination-description .full-description {
-display: none;
-} 
-
-.destination-description .mobile-description {
-    display: block;
+  display: none;
 }
 
+.destination-description .mobile-description {
+  display: block;
+}
 
 .destination-container {
-    background-color: #f2f2f2;
-    border: 1px rgb(206,17,65) solid;
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 10px;
-    width: 95%;
+  background-color: #f2f2f2;
+  border: 1px rgb(206, 17, 65) solid;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 10px;
+  width: 95%;
 }
 
 .destination-container:hover {
-  background-color: rgb(206,17,65);
+  background-color: rgb(206, 17, 65);
   color: white;
 }
 
 .destination-info {
-    padding: 0.5cm;
+  padding: 0.5cm;
 }
 
 .destination-info img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .destination-title {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    text-align: center; 
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .destination-description {
   font-size: 1.5em;
-    margin-bottom: 20px;
-    text-align: justify; 
+  margin-bottom: 20px;
+  text-align: justify;
 }
 
 .destination-description img {
@@ -1099,12 +1106,12 @@ display: none;
 
 #toggleDarkMode {
   background-color: white;
-  color: rgb(206,17,65);
+  color: rgb(206, 17, 65);
   margin-bottom: 0.5em;
 }
 
 #toggleDarkMode {
-  background: rgb(17, 13, 13) ;
+  background: rgb(17, 13, 13);
   color: #fff;
   border: solid rgb(17, 13, 13);
   border-radius: 0.5em;
@@ -1114,21 +1121,22 @@ display: none;
 
 /* -----------------------------------CONTACT US PAGE ---------------------------- */
 
-
 /* Base styles for Contact Info and Contact Form */
 
-.contact-form,.contact-info,
-.map  {
-  border: 1px rgb(206,17,65) solid;
+.contact-form,
+.contact-info,
+.map {
+  border: 1px rgb(206, 17, 65) solid;
   background-color: #f2f2f2;
   border-radius: 10px;
   padding: 20px;
   margin: 2em auto;
-  max-width: 95%; 
+  max-width: 95%;
   box-sizing: border-box;
 }
 
-.contact-info h2, .contact-form h2 {
+.contact-info h2,
+.contact-form h2 {
   color: #fff;
   background: black;
   padding: 10px;
@@ -1221,7 +1229,6 @@ display: none;
 
 /* Media query for tablet view */
 @media only screen and (min-width: 768px) {
-
   .hamburger-menu,
   .hamburger-menu::after,
   .hamburger-menu::before {
@@ -1408,48 +1415,54 @@ display: none;
 
   /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
 
-  
   /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
   /*  STYLING PACKAGES PAGE*/
 
   .Details {
     display: block;
   }
-  
+
   .Packages img {
     display: block;
   }
-  
+
   .Desktop {
     display: block;
   }
-  
+
   .Map {
     margin: auto;
     overflow: hidden;
     width: 95%;
   }
-  
+
   #searchBar {
     visibility: hidden;
   }
-  
+
   .Tablet {
     display: flex;
   }
-  
+
   /*  STYLING DESTINATION PAGE*/
   .destination-description img {
     display: block;
     width: 48%;
     float: right;
   }
-  
-  .destination-container, #destination-niagara, #destination-blue, #destination-banff, #destination-calgary, #destination-canmore , 
-  #destination-montreal, #destination-quebec, #destination-hallifax  {
+
+  .destination-container,
+  #destination-niagara,
+  #destination-blue,
+  #destination-banff,
+  #destination-calgary,
+  #destination-canmore,
+  #destination-montreal,
+  #destination-quebec,
+  #destination-hallifax {
     clear: both;
   }
-  
+
   .destination-description p {
     width: 45%;
     float: left;
@@ -1457,7 +1470,7 @@ display: none;
   .destination-container {
     overflow: auto;
   }
-  
+
   /*STYLING CONTACT US PAGE*/
 
   .contact-map {
@@ -1473,7 +1486,7 @@ display: none;
     margin: 1rem;
     margin-top: 2rem;
   }
-  
+
   #aboutus .client-section {
     display: flex;
     justify-content: center;
@@ -1592,9 +1605,8 @@ display: none;
     display: block;
   }
 
-      
   /*  STYLING PACKAGES PAGE*/
-    
+
   .Itinerary {
     float: none;
   }
@@ -1623,7 +1635,9 @@ display: none;
     margin-left: 25%;
   }
 
-  .Itinerary, .Details, .Map {
+  .Itinerary,
+  .Details,
+  .Map {
     width: 95%;
     margin-left: 2.2%;
   }
@@ -1701,12 +1715,19 @@ display: none;
   /*  STYLING DESTINATION PAGE*/
 
   .destination-description img {
-  width: 97%;
-  float: none;
+    width: 97%;
+    float: none;
   }
 
-  .destination-container, #destination-niagara, #destination-blue, #destination-banff, #destination-calgary, #destination-canmore , 
-  #destination-montreal, #destination-quebec, #destination-hallifax  {
+  .destination-container,
+  #destination-niagara,
+  #destination-blue,
+  #destination-banff,
+  #destination-calgary,
+  #destination-canmore,
+  #destination-montreal,
+  #destination-quebec,
+  #destination-hallifax {
     clear: none;
   }
 
@@ -1720,7 +1741,7 @@ display: none;
   }
   .destination-container {
     width: 98%;
-    margin:auto;
+    margin: auto;
     margin-top: 2%;
   }
 
@@ -1747,5 +1768,3 @@ display: none;
     margin-left: 1%;
   }
 }
-
-
