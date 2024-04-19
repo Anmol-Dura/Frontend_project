@@ -608,7 +608,8 @@ span a {
     flex-basis: 50%;
     background: rgb(206,17,65);
     color: #fff;
-    height: 2.5em;
+    font-size: 0.8em;
+    height: 3em;
     border: solid rgb(206,17,65);
     border-radius: 0.5em;
     outline: 0;
@@ -694,7 +695,8 @@ span a {
     color: #fff;
     border: solid rgb(206,17,65);
     border-radius: 0.5em;
-    height: 2.5em;
+    font-size: 1em;
+    height: 3.5em;
     margin: 2%;
 }
 
