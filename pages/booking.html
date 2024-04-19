@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/bookingJavaScript.js" defer></script>
     <script
       src="https://kit.fontawesome.com/c5017c04fb.js"
       crossorigin="anonymous"
@@ -35,17 +34,12 @@
       </label>
       <nav class="sidebar">
         <div><a href="../index.html">Home</a></div>
-        <div>
-          <a href="./aboutus.html">About<span>Us</span></a>
-        </div>
-        <div>
-          <a href="./contactus.html">Contact<span>Us</span></a>
-        </div>
+        <div><a href="./aboutus.html">About<span>Us</span></a></div>
+        <div><a href="./contactus.html">Contact<span>Us</span></a></div>
         <div><a href="./destinations.html">Destinations</a></div>
-        <div><a href="./login.html">Login</a></div>
-        <div>
-          <a href="./packages.html" class="desktop-only">Packages</a>
-        </div>
+        <div><a href="./packages.html" class="desktop-only">Packages</a></div>
+        <div class="Wishlist"><a href="mywishlist.html">My<span>Wishlist</span></a></div> 
+        <div><a href="login.html" id="logout">Login</a></div>
       </nav>
     </header>
     <main>
@@ -133,7 +127,7 @@
           </div>
           <div class="buttons-section">
             <button type="reset">Reset</button>
-            <button type="submit">Submit</button>
+            <button type="submit" onclick="reloadPage()">Submit</button>
           </div>
         </form>
       </div>
@@ -180,13 +174,10 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>
-          Copyright &copy;2023; Designed by
-          <span class="designer"
-            ><a href="html/Group-3.html" target="_blank">Bug-Busters!</a></span
-          >
-        </p>
+        <div class="footer-bottom">
+          <p>Copyright &copy;2024; Designed by <span class="designer"><a href="../index.html">Bug-Busters!</a></span></p>
       </div>
     </footer>
+    <script src="../js/bookingJavaScript.js"></script>
   </body>
 </html>

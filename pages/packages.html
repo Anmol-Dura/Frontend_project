@@ -1,92 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/java.js" defer></script>
-    <script
-      src="https://kit.fontawesome.com/c5017c04fb.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="icon"
-      href="./media/images/MicrosoftTeams-image.png"
-      type="image/x-icon"
-    />
-    <!--for fav-icon-->
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/c5017c04fb.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../media/images/MicrosoftTeams-image.png" type="image/x-icon"> <!--for fav-icon-->
+</head>
 
-  <body>
+<body>
     <header>
-      <div class="logo">
-        <a href="../index.html"
-          ><img src="../media/images/logo-01.png" alt="a logo"
-        /></a>
-      </div>
-      <label class="hamburger-menu">
-        <input type="checkbox" />
-      </label>
-      <nav class="sidebar">
-        <div><a href="../index.html">Home</a></div>
-        <div>
-          <a href="./aboutus.html">About<span>Us</span></a>
+        <div class="logo">
+            <a href="../index.html"><img src="../media/images/logo-01.png" alt="a logo"></a>
         </div>
-        <div>
-          <a href="./contactus.html">Contact<span>Us</span></a>
-        </div>
-        <div><a href="./destinations.html">Destinations</a></div>
-        <div><a href="./login.html">Login</a></div>
-        <div><a href="./booking.html">Booking</a></div>
+
+
+        <label class="hamburger-menu">
+            <input type="checkbox">
+        </label>
+        <nav class="sidebar">
+            <div><a href="../index.html">Home</a></div>
+            <div><a href="aboutus.html">About<span>Us</span></a></div>
+            <div><a href="contactus.html">Contact<span>Us</span></a></div>
+            <div><a href="destinations.html">Destinations</a></div>
+            <div class="Wishlist"><a href="mywishlist.html">My<span>Wishlist</span></a></div> 
+            <div><a href="login.html" id="logout">Login</a></div>
+        </nav>
     </header>
-    <main></main>
+    <main>
+        <div class="entry-field" id="searchBar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchInput" placeholder="Search for places...">
+        </div>
+
+        <div class="pack-container">
+            <div id="Pack-Title">
+                <h1>Choose Your Next Adventure</h1>
+            </div>
+    
+            <div class="Packages" id="Package-1">
+                <!-- Package 1 Title-->
+                <div>
+                    <h2>Adventurous Alberta</h2>
+                </div>
+    
+                <!-- Package Img-->
+                <div id="Pack-Img">
+                    <div class="tablet" id="Img-Pack1">
+                        <img src="../media/images/banff.jpg" alt="Banff Img">
+                    </div>
+    
+                    <!-- Package Map-->
+                    <div class="Desktop Map" id="Map-Pack1">
+                        <iframe src="https://www.google.com/maps/d/embed?mid=1HzCRZ7UdjwnV-0KYVyDP7hM9qS7Y4LY&ehbc=2E312F" width="640" height="480"></iframe>
+                    </div>
+                </div>
+    
+                <!-- Package Itinerary and Details-->
+                <div>
+                
+                    <section class="Itinerary">
+                        <h3>Itinerary</h3>
+                        <div class="Desktop">
+                            <h4 onmouseover="ShowDayDescription('P1D1Description')" onmouseout="HideDayDescription('P1D1Description')">
+                            Day 1: Arrival in Calgary</h4>
+                            <p id="P1D1Description">Upon arrival, explore downtown Calgary's vibrant streets lined with shops, 
+                            restaurants, and cultural landmarks. Spend the night in one of the city's cozy accommodations.</p>
+                            
+                            <h4 onmouseover="ShowDayDescription('P1D2Description')" onmouseout="HideDayDescription('P1D2Description')">
+                            Day 2: Calgary to Canmore</h4>
+                            <p id="P1D2Description">Embark on a scenic drive from Calgary to Canmore, soaking in the majestic views of 
+                            the Canadian Rockies along the way. Spend the day exploring Canmore's charming downtown area and picture 
+                            surroundings before settling in for the night</p>
+                            
+                            <h4 onmouseover="ShowDayDescription('P1D3Description')" onmouseout="HideDayDescription('P1D3Description')">
+                            Day 3: Canmore to Banff</h4>
+                            <p id="P1D3Description">Travel to Banff, a world-renowned destination, browse local boutiques, and visit 
+                            fascinating museums. Retire to your accommodations for a restful night in Banff.</p>
+                            
+                            <h4 onmouseover="ShowDayDescription('P1D4Description')" onmouseout="HideDayDescription('P1D4Description')">
+                            Day 4: Banff-Lake Minnewanka</h4>
+                            <p id="P1D4Description">Journey to Lake Minnewanka, where crystal-clear waters and rugged mountain scenery 
+                            await. Enjoy outdoor activities such as hiking, boating, or picnicking along the lakeshore. Return to Banff 
+                            in the evening for a relaxing night in the heart of the Rockies.</p>
+                        
+                            <h4 onmouseover="ShowDayDescription('P1D5Description')" onmouseout="HideDayDescription('P1D5Description')">
+                            Day 5: Explore Banff National</h4>
+                            <p id="P1D5Description">Embark on an adventure through Banff National Park, marveling at natural wonders like 
+                            Johnston Canyon's waterfalls and the turquoise hues of Moraine Lake. Capture stunning photographs and immerse 
+                            yourself in the park's pristine wilderness. We will venture to nearby Lake Louise for accommodation.</p>
+                        
+                            <h4 onmouseover="ShowDayDescription('P1D6Description')" onmouseout="HideDayDescription('P1D6Description')">
+                            Day 6: Lake Louise </h4>
+                            <p id="P1D6Description">Discover the iconic beauty of Lake Louise, surrounded by towering peaks and serene 
+                            alpine landscapes. Engage in activities such as hiking, canoeing, or simply admiring the breathtaking scenery. 
+                            Wind down with a peaceful evening in Lake Louise or nearby accommodations.</p>
+                        </div>
+                    </section>
+    
+                    <section class="Details">
+                        <h3>Package Details:</h3>
+                        <div>
+                            <h4>This Package Include:</h4>
+                            <i class="fa-solid fa-plane"></i><p>Round airplane trip.</p><br><br>
+                            <i class="fa-solid fa-van-shuttle"></i><p>Transport.</p><br><br>
+                            <i class="fa-solid fa-bed"></i><p>Double Accomodation.</p><br><br>
+                            <i class="fa-solid fa-utensils"></i><p>Breakfast and Dinner.</p><br><br>
+                            <i class="fa-solid fa-mountain"></i><p>Banff National park Ticket and Museum Tickets included.</p><br><br>
+                        </div>
+    
+                        <div class="Price">
+                            <p><strong>6-Day Tour CAD $ 3500 / per person.</strong></p>
+                        </div>
+    
+                    </section>
+    
+                    <!-- Booking and Add Wishlist Buttons-->
+                    <div class="Button-container">
+                        <div class="Booking Wishlist">
+                            <button type="submit"  onclick="window.open('booking.html','_blank')">Book Now</button>
+                            <button id="button1"><i id="icon1" class="fa-regular fa-heart"></i>&nbsp;Add Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!--  PACKAGE 2 INFORMATION-->
+    
+            <div class="Packages" id="Package-2">
+                <!-- Package 2 Title-->
+                <div>
+                    <h2>Marvellous Ontario</h2>
+                </div>
+    
+                <!-- Package Img-->
+                <div class="tablet" id="Img-Pack2">
+                    <img src="../media/images/niagara.jpg" alt="Niagara Falls Img">
+                </div>
+    
+                <!-- Package Map-->
+                <div class=" Desktop Map" id="Map-Pack2">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1hmBh8PHh8mbKrUiJlPo1Uo3JOou77-8&ehbc=2E312F" width="640" height="480"></iframe>
+                </div>
+    
+                <!-- Package Itinerary and Details-->
+                <div>
+                
+                    <section class="Itinerary">
+                        <h3>Itinerary</h3>
+                        <div class="Desktop">
+                            <h4 onmouseover="ShowDayDescription('P2D1Description')" onmouseout="HideDayDescription('P2D1Description')">
+                            Day 1: Arrival in Niagara Falls</h4>
+                            <p id="P2D1Description">Arrive in Niagara Falls and spend the day exploring the iconic waterfalls from 
+                            various viewpoints in Niagara Falls State Park. Witness the breathtaking beauty of the falls, enjoy a Maid of the Mist boat tour, and dine with a view of the illuminated cascades.</p>
+                            
+                            <h4 onmouseover="ShowDayDescription('P2D2Description')" onmouseout="HideDayDescription('P2D2Description')">
+                            Day 2: Niagara Fall Attractions</h4>
+                            <p id="P2D2Description">Experience the power of Niagara Falls up close with a Maid of the Mist boat tour and visit attractions like Journey Behind the Falls and the Butterfly Conservatory.
+                             Explore Clifton Hill's entertainment district in the evening, offering a variety of dining and entertainment options.</p>
+                            
+                            <h4 onmouseover="ShowDayDescription('P2D3Description')" onmouseout="HideDayDescription('P2D3Description')">
+                            Day 3: Travel to Toronto</h4>
+                            <p id="P2D3Description">Depart Niagara Falls and journey to Toronto, Canada's vibrant metropolis. Visit the iconic CN Tower for panoramic views of the city skyline and Lake Ontario. 
+                            Explore the Harbourfront area, home to cultural attractions, restaurants, and shops, offering a picturesque setting for an evening stroll.</p>
+                            
+                            <h4 onmouseover="ShowDayDescription('P2D4Description')" onmouseout="HideDayDescription('P2D4Description')">
+                            Day 4: Exploring Toronto</h4>
+                            <p id="P2D4Description">Discover Toronto's cultural riches with a visit to the Royal Ontario Museum (ROM) and explore the diverse exhibits showcasing art, history, and natural wonders. 
+                             Wander through the historic Distillery District, lined with charming shops and cafes, before experiencing the city's lively nightlife in trendy neighborhoods.</p>
+                        
+                            <h4 onmouseover="ShowDayDescription('P2D5Description')" onmouseout="HideDayDescription('P2D5Description')">
+                            Day 5: Blue Montain Resort</h4>
+                            <p id="P2D5Description">Embark on a scenic journey to Blue Mountain Resort near Collingwood, offering an array of outdoor activities amidst stunning natural landscapes. 
+                                Spend the day hiking, zip-lining, or mountain biking, and unwind in the evening with a relaxing spa session or fine dining experience at the resort.</p>
+    
+                        </div>
+                    </section>
+    
+                    <section class="Details">
+                        <h3>Package Details:</h3>
+                        <div>
+                            <h4>This Package Include:</h4>
+                            <i class="fa-solid fa-plane"></i><p>Round airplane trip.</p><br><br>
+                            <i class="fa-solid fa-van-shuttle"></i><p>Transport.</p><br><br>
+                            <i class="fa-solid fa-bed"></i><p>Double Accomodation.</p><br><br>
+                            <i class="fa-solid fa-utensils"></i><p>Breakfast and Dinner.</p><br><br>
+                            <i class="fa-solid fa-mountain"></i><p>CN Towe and Museum Tickets not included.</p><br><br>
+                        </div>
+    
+                        <div class="Price">
+                            <p><strong>5-Day Tour CAD $ 2800 / per person.</strong></p>
+                        </div>
+    
+                    </section>
+    
+                    <!-- Booking and Add Wishlist Buttons-->
+                    <div class="Button-container">
+                        <div class="Booking Wishlist">
+                            <button type="submit"  onclick="window.open('booking.html','_blank')">Book Now</button>
+                            <button id="button2"><i id="icon2" class="fa-regular fa-heart"></i>&nbsp;Add Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+    
+            <!--  PACKAGE 3 INFORMATION-->
+            
+            <div class="Packages" id="Package-3">
+                <!-- Package 3 Title-->
+                <div>
+                    <h2>Eastern Escapade</h2>
+                </div>
+    
+                <!-- Package Img-->
+                <div class="tablet" id="Img-Pack3">
+                    <img src="../media/images/hallifax.jpg" alt="Hallifax Img">
+                </div>
+    
+                <!-- Package Map-->
+                <div class="Desktop Map" id="Map-Pack3">
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1_c44_B_YWwl94wI9rHa_5mEV-bFDknE&ehbc=2E312F" width="640" height="480"></iframe>
+                </div>
+    
+                <!-- Package Itinerary and Details-->
+                <div>
+                
+                    <section class="Itinerary">
+                        <h3>Itinerary</h3>
+                        <div class="Desktop">
+                            <h4 onmouseover="ShowDayDescription('P3D1Description')" onmouseout="HideDayDescription('P3D1Description')">
+                            Day 1: Arrival in Montreal</h4>
+                            <p id="P3D1Description">Begin your journey in Montreal, a city known for its vibrant culture and historic architecture. Explore Old Montreal, stroll along cobblestone streets, and visit 
+                                iconic landmarks such as Notre-Dame Basilica and the Old Port. Indulge in French-inspired cuisine at a local bistro.</p>
+                            
+                            <h4 onmouseover="ShowDayDescription('P3D2Description')" onmouseout="HideDayDescription('P3D2Description')">
+                            Day 2: Discovering Montreal</h4>
+                            <p id="P3D2Description">Embark on a guided tour of Montreal's highlights, including Mount Royal Park for panoramic city views, the Montreal Museum of Fine Arts, and bustling neighborhoods
+                                 like Plateau-Mont-Royal and Mile End. Experience the city's culinary scene with a food tour or visit Jean-Talon Market.</p>
+                            
+                            <h4 onmouseover="ShowDayDescription('P3D3Description')" onmouseout="HideDayDescription('P3D3Description')">
+                            Day 3: Travel to Quebec City</h4>
+                            <p id="P3D3Description">Journey to Quebec City, a UNESCO World Heritage site renowned for its European charm and fortified walls. Explore the historic district of Old Quebec, visit Château
+                                 Frontenac, and wander through Petit-Champlain, one of North America's oldest streets. Enjoy traditional Quebecois cuisine for dinner.</p>
+                            
+                            <h4 onmouseover="ShowDayDescription('P3D4Description')" onmouseout="HideDayDescription('P3D4Description')">
+                            Day 4: Exploring Quebec</h4>
+                            <p id="P3D4Description">Delve deeper into Quebec City's history with visits to the Citadel, Place Royale, and the Plains of Abraham. Experience the city's cultural scene with a visit
+                                to the Musée de la civilisation or attend a performance at the Grand Théâtre de Québec.</p>
+                        
+                            <h4 onmouseover="ShowDayDescription('P3D5Description')" onmouseout="HideDayDescription('P3D5Description')">
+                            Day 5: Hallifax</h4>
+                            <p id="P3D5Description">Travel to Halifax, Nova Scotia's capital, known for its maritime heritage and scenic waterfront. Explore the historic Halifax Citadel National Historic Site, 
+                                stroll along the waterfront boardwalk, and visit the Canadian Museum of Immigration at Pier 21. Enjoy fresh seafood for dinner at a local restaurant.</p>
+    
+                            <h4 onmouseover="ShowDayDescription('P3D6Description')" onmouseout="HideDayDescription('P3D6Description')">
+                            Day 6: Hallifax Attractions</h4>
+                            <p id="P3D6Description">Discover Halifax's attractions, including the Maritime Museum of the Atlantic, showcasing the city's seafaring history, and the Halifax Public Gardens, 
+                                a tranquil oasis in the heart of downtown. Explore the vibrant neighborhoods of North End and Agricola Street for artisanal shops and cafes.</p>
+                        </div>
+                    </section>
+    
+                    <section class="Details">
+                        <h3>Package Details:</h3>
+                        <div>
+                            <h4>This Package Include:</h4>
+                            <i class="fa-solid fa-plane"></i><p>Round airplane trip.</p><br><br>
+                            <i class="fa-solid fa-van-shuttle"></i><p>Transport.</p><br><br>
+                            <i class="fa-solid fa-bed"></i><p>Double Accomodation.</p><br><br>
+                            <i class="fa-solid fa-utensils"></i><p>Breakfast and Dinner.</p><br><br>
+                            <i class="fa-solid fa-mountain"></i><p>Maritime and Immigration at Pier 21 Museum tiquets included.</p><br><br>
+                        </div>
+    
+                        <div class="Price">
+                            <p><strong>6-Day Tour CAD $ 3800 / per person.</strong></p>
+                        </div>
+    
+                    </section>
+    
+                    <!-- Booking and Add Wishlist Buttons-->
+                    <div class="Button-container">
+                        <div class="Booking Wishlist">
+                            <button type="submit"  onclick="window.open('booking.html','_blank')">Book Now</button>
+                            <button id="button3"><i id="icon3" class="fa-regular fa-heart"></i>&nbsp;Add Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+    </main>
+
+    <!-- Footer Section-->
     <footer>
-      <div class="footer-container">
-        <div class="social-icons">
-          <a href="https://www.facebook.com/" target="_blank"
-            ><i class="fa-brands fa-facebook"></i
-          ></a>
-          <a href="https://www.instagram.com/" target="_blank"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-          <a href="https://www.twitter.com/" target="_blank"
-            ><i class="fa-brands fa-twitter"></i
-          ></a>
-          <a href="https://www.linkedin.com/" target="_blank"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a href="https://www.youtube.com/" target="_blank"
-            ><i class="fa-brands fa-youtube"></i
-          ></a>
+        <div class="footer-container">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="./packages.html">Packages</a></li>
+                    <li><a href="./aboutus.html">About <span class="footer-span">Us</span></a></li>
+                    <li><a href="./contactus.html">Contact<span class="footer-span">Us</span></a></li>
+                    <li><a href="./destinations.html">Destinations</a></li>
+                    <li><a href="./mywishlist.html"><span class="footer-span">My</span>wishlist</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="footer-nav">
-          <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li>
-              <a href="./aboutus.html"
-                >About<span class="footer-span">Us</span></a
-              >
-            </li>
-            <li>
-              <a href="./contactus.html"
-                >Contact<span class="footer-span">Us</span></a
-              >
-            </li>
-            <li><a href="./destinations.html">Destinations</a></li>
-            <li><a href="./login.html">Login</a></li>
-            <li><a href="./packages.html">Packages</a></li>
-          </ul>
+        <div class="footer-bottom">
+            <p>Copyright &copy;2024; Designed by <span class="designer"><a href="../index.html">Bug-Busters!</a></span></p>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>
-          Copyright &copy;2023; Designed by
-          <span class="designer"
-            ><a href="html/Group-3.html" target="_blank">Bug-Busters!</a></span
-          >
-        </p>
-      </div>
     </footer>
-  </body>
+    <script src="../js/packages.js" defer></script>
+</body>
 </html>

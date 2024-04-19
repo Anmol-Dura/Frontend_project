@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/c5017c04fb.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="../media/images/MicrosoftTeams-image.png" type="image/x-icon"> <!--for fav-icon-->
+</head>
+
+<body>
+    <main>
+        <div class="login-container">
+            <div class="login-form">
+                <div class="login-logo">
+                    <a href="../index.html"><img src="../media/images/logo-01.png" alt="a logo"></a>
+                </div>
+
+                <div class="login-buttons">
+                    <button type="button" id="createBtn">Create Account</button>
+                    <button type="button" id="loginBtn">Log in</button>
+                </div>
+                
+                
+                <div class="Tablet" id="progressBar">
+                    <div id="progress">0%</div>
+                </div>
+
+                <form id="userForm">
+                    <div class="entry-group">
+                        <div class="entry-field  Tablet" id="nameField">
+                            <i class="fa-solid fa-user"></i>
+                            <label for="name"></label>
+                            <input id="name" name="name" type="text" placeholder="Name">
+                            <div></div>
+                        </div>
+
+                        <div class="entry-field">
+                            <i class="fa-solid fa-envelope"></i>
+                            <label for="useremail"></label>
+                            <input id="useremail" name="useremail" type="email" placeholder="Email">
+                            <div></div>
+                            
+                        </div>
+
+                        <div class="entry-field" id="password1Field">
+                            <i class="fa-solid fa-lock"></i>
+                            <label for="password1"></label>
+                            <input id="password1" name="password1" type="password" placeholder="Password">
+                            <div></div>
+                        </div>
+
+                        <div class="entry-field" id="password2Field">
+                            <i class="fa-solid fa-lock"></i>
+                            <label for="password2"></label>
+                            <input id="password2" name="password2" type="password" placeholder="Re-enter Password">
+                            <div></div>
+                        </div>
+
+                        <div class="entry-field" id ="genderField">
+                            <label for="male">Male</label>
+                            <input type="radio" id="male" name="gender" value="male">
+                            
+                            <label for="female">Female</label>
+                            <input type="radio" id="female" name="gender" value="female">
+                        </div>
+
+                        <div class="entry-field  Tablet" id="dobField">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <label for="dob">DOB</label>
+                            <input id="dob" name="dob" type="date" placeholder="Date of Birth">
+                            <div></div>
+                        </div>
+
+                        <div class="login-buttons">
+                            <button type="submit" id="submit-Login">Submit</button>
+                            <button type="reset" id="resetBtn">Reset</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+    <script src="../js/indexDB.js"></script>
+</body>
+
+</html>
