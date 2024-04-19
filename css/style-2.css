@@ -1027,8 +1027,6 @@ display: none;
   background-color: #0056b3;
 }
 
-
-
 /* Media query for tablet view */
 @media only screen and (min-width: 768px) {
   .hamburger-menu,
@@ -1216,6 +1214,62 @@ display: none;
   }
 
   /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+
+  
+  /* Horizontal offset, Vertical offset, Blur radius, Shadow color */
+  /*  STYLING PACKAGES PAGE*/
+
+  .Details {
+    display: block;
+  }
+  
+  .Packages img {
+    display: block;
+  }
+  
+  .Desktop {
+    display: block;
+  }
+  
+  .Map {
+    margin: auto;
+    overflow: hidden;
+    width: 95%;
+  }
+  
+  #searchBar {
+    visibility: hidden;
+  }
+  
+  .Tablet {
+    display: flex;
+  }
+  
+  /*  STYLING DESTINATION PAGE*/
+  .destination-description img {
+    display: block;
+    width: 48%;
+    float: right;
+  }
+  
+  .destination-container, #destination-niagara, #destination-blue, #destination-banff, #destination-calgary, #destination-canmore , 
+  #destination-montreal, #destination-quebec, #destination-hallifax  {
+    clear: both;
+  }
+  
+  .destination-description p {
+    width: 45%;
+    float: left;
+  }
+  .destination-container {
+    overflow: auto;
+  }
+  
+  /*STYLING CONTACT US PAGE*/
+
+  .contact-map {
+    display: block;
+  }
 }
 
 /* ////////////////////////////////Media query for desktop view/////////////////////////////////////////// */
