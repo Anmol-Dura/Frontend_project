@@ -1,33 +1,32 @@
 // Adding an event listener to Log in btn
-let logTab = document.getElementById('logout');
-document.addEventListener('DOMContentLoaded', function(){
-    let userLogged = localStorage.getItem('islogged');
+let logTab = document.getElementById("logout");
+document.addEventListener("DOMContentLoaded", function () {
+  let userLogged = localStorage.getItem("islogged");
 
-    let wishlistItems = document.querySelectorAll(".Wishlist");
-    if (userLogged == 'true'){
-        wishlistItems.forEach(function(item) {
-            item.style.display = 'block';
-        });
-        logTab.textContent = "LogOut"
-    }
-    else {
-        wishlistItems.forEach(function(item) {
-            item.style.display = 'none';
-        });
-    }
-})
+  let wishlistItems = document.querySelectorAll(".Wishlist");
+  if (userLogged == "true") {
+    wishlistItems.forEach(function (item) {
+      item.style.display = "block";
+    });
+    logTab.textContent = "LogOut";
+  } else {
+    wishlistItems.forEach(function (item) {
+      item.style.display = "none";
+    });
+  }
+});
 
-logTab.addEventListener('click',function(e){
+logTab.addEventListener("click", function (e) {
   e.preventDefault();
   let tabtext = logTab.textContent;
-  console.log(tabtext)
-  if (tabtext === 'LogOut'){
-      localStorage.clear();
-      localStorage.setItem('islogged',false)
-      logTab.textContent = "LogIn"
+  console.log(tabtext);
+  if (tabtext === "LogOut") {
+    localStorage.clear();
+    localStorage.setItem("islogged", false);
+    logTab.textContent = "LogIn";
   }
-  window.location.href = './pages/login.html';
-})
+  window.location.href = "./pages/login.html";
+});
 
 //creating a function that will change the checked status of the 3 radio buttons when we chick the labels
 let radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -98,4 +97,10 @@ radioLabels.forEach((label) => {
   label.addEventListener("click", checkSelectedPackages);
 });
 
-
+//reloading the page when we sumbit the form to clear the form
+function reloadPage() {
+  // Reset all form fields
+  document.getElementById("bookingForm").reset();
+  // Reload the page
+  location.reload();
+}
