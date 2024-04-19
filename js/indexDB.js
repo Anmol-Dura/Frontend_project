@@ -143,10 +143,11 @@ function checkInputs() {
         }
 
 } else {
-        if (usernameValue === '') {
+
+        if (usernameValue === '' && window.matchMedia("(min-width: 768px)").matches){
             ErrorFunction(nameInput,"Name is Mandatory");
         }
-        else {
+        else if (window.matchMedia("(min-width: 768px)").matches) {
             SuccessFunction(nameInput);
         }
 
@@ -181,7 +182,6 @@ function checkInputs() {
 
         // If the validUser.lenght is 0 that means there are no error classes
         if(validUser.length === 0) {
-            console.log('I am here')
             addUser();
         }
         
