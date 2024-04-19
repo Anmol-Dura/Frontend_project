@@ -34,11 +34,17 @@
       </label>
       <nav class="sidebar">
         <div><a href="../index.html">Home</a></div>
-        <div><a href="./aboutus.html">About<span>Us</span></a></div>
-        <div><a href="./contactus.html">Contact<span>Us</span></a></div>
+        <div>
+          <a href="./aboutus.html">About<span>Us</span></a>
+        </div>
+        <div>
+          <a href="./contactus.html">Contact<span>Us</span></a>
+        </div>
         <div><a href="./destinations.html">Destinations</a></div>
         <div><a href="./packages.html" class="desktop-only">Packages</a></div>
-        <div class="Wishlist"><a href="mywishlist.html">My<span>Wishlist</span></a></div> 
+        <div class="Wishlist">
+          <a href="mywishlist.html">My<span>Wishlist</span></a>
+        </div>
         <div><a href="login.html" id="logout">Login</a></div>
       </nav>
     </header>
@@ -47,7 +53,7 @@
         <div class="background-image-booking"></div>
         <form id="bookingForm">
           <div class="mobile-only">
-            <label for="firstName">Name:</label>
+            <label for="Name">Name:</label>
             <input type="text" id="Name" name="Name" required />
           </div>
           <div class="desktop-only">
@@ -112,6 +118,7 @@
               min="1"
               required
             />
+          </div>
           <div>
             <label for="comments">Comments:</label><br />
             <textarea
@@ -127,7 +134,7 @@
           </div>
           <div class="buttons-section">
             <button type="reset">Reset</button>
-            <button type="submit">Submit</button>
+            <button type="submit" onclick="reloadPage()">Submit</button>
           </div>
         </form>
       </div>
@@ -174,8 +181,11 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>Copyright &copy;2024; Designed by <span class="designer"><a href="../index.html">Bug-Busters!</a></span></p>
-    </div>
+        <p>
+          Copyright &copy;2024; Designed by
+          <span class="designer"><a href="../index.html">Bug-Busters!</a></span>
+        </p>
+      </div>
     </footer>
     <script src="../js/bookingJavaScript.js"></script>
   </body>
