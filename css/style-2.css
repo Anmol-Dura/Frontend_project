@@ -1380,6 +1380,95 @@ display: none;
   .desktop-only {
     display: block;
   }
+
+      
+  /*  STYLING PACKAGES PAGE*/
+    
+  .Itinerary {
+    float: none;
+  }
+
+  .Desktop {
+    display: block;
+  }
+
+  .Tablet img {
+    height: 45vh;
+  }
+
+  .Map {
+    overflow: hidden;
+  }
+
+  .Packages {
+    float: left;
+    width: 48%;
+    margin-left: 2%;
+    margin-bottom: 4%;
+  }
+
+  #Package-3 {
+    clear: both;
+    margin-left: 25%;
+  }
+
+  .Itinerary, .Details, .Map {
+    width: 95%;
+    margin-left: 2.2%;
+  }
+
+  footer {
+    clear: both;
+  }
+
+  /*  STYLING DESTINATION PAGE*/
+
+  .destination-description img {
+  width: 97%;
+  float: none;
+  }
+
+  .destination-container, #destination-niagara, #destination-blue, #destination-banff, #destination-calgary, #destination-canmore , 
+  #destination-montreal, #destination-quebec, #destination-hallifax  {
+    clear: none;
+  }
+
+  .destination-description p {
+    font-size: 0.9em;
+    width: 97%;
+    float: none;
+  }
+  .destination-container {
+    overflow: auto;
+  }
+  .destination-container {
+    width: 98%;
+    margin:auto;
+    margin-top: 2%;
+  }
+
+  .destination-description {
+    width: 31%;
+    float: left;
+    margin-left: 1.5%;
+  }
+
+  /*STYLING CONTACT US PAGE*/
+
+  .contact-info {
+    width: 48%;
+  }
+
+  .contact-info {
+    float: right;
+    margin-right: 1%;
+  }
+
+  .contact-form {
+    width: 48%;
+    float: left;
+    margin-left: 1%;
+  }
 }
 
 /* ////////////////////////////////Media query for mobile view/////////////////////////////////////////// */
