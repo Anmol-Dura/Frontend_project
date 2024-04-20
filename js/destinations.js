@@ -57,5 +57,5 @@ logTab.addEventListener('click',function(e){
         localStorage.setItem('islogged',false)
         logTab.textContent = "LogIn"
     }
-    window.location.href = './pages/login.html';
+    window.location.href = 'login.html';
   })
